@@ -4,12 +4,18 @@
 
 int main()
 {
-	int	i;
+	int	n;
+	int	p;
 	char *str = NULL;
 
-	i = printf("|%1d|", -42);
+	printf("---4---\n");
+	p = printf("|%-2d|", 42);
+	printf("\n");
+	n = printf("|%4d|", -42);
 
-	printf("\n%d\n", i);
+	printf("\n%d\n", p);
+	printf("%d\n", n);
+
 //	printf("%p\n", &i);
 //	i = printf("%-111111111%", 42);
 //	i = printf("%40000 0000       000   4440.001786i", 42);

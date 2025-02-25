@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:50:54 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 17:13:51 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/25 19:54:09 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,21 @@ typedef struct s_format
 	size_t		width;
 }				t_format;
 
+typedef struct s_strnbr
+{
+	char		*s;
+	size_t		len;
+	int			i;
+	int			neg;
+}				t_strnbr;
+
 typedef struct s_printf
 {
 	char		*input;
 	size_t		size;
 	va_list		args;
 	t_format	format;
+	t_strnbr	aux;
 }				t_printf;
 
 // FT_PRINTF
@@ -79,9 +88,9 @@ void			parse_format(t_printf *ptf);
 int				type(t_printf *ptf, char *start, char *end);
 
 // PRINT
-void			ft_putchar(char c, size_t *size);
+void			ft_putchar(char c, size_t amount, size_t *size);
 void			print_no_type(t_printf *ptf);
-void			print_int(t_printf *ptf, int nbr, char *strnbr);
+void			print_int(t_printf *ptf, int nbr);
 void			print_char(t_printf *ptf, char c);
 void			print_str(t_printf *ptf, char *str, int i, int len);
 void			print_addr(t_printf *ptf, void *ptr);
@@ -98,6 +107,5 @@ void			minus(t_printf *ptf);
 void			width(t_printf *ptf);
 
 // FLAGS_IMPLEMENTATION
-void			put_char_loop(char c, size_t amount, size_t *size);
 
 #endif

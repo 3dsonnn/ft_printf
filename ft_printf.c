@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:50:52 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 16:42:03 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/25 19:49:07 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	select_printer(t_printf *ptf)
 	if (ptf->format.type == 'p')
 		print_addr(ptf, va_arg(ptf->args, void *));
 	if (ptf->format.type == 'd' || ptf->format.type == 'i')
-		print_int(ptf, va_arg(ptf->args, int), NULL);
+		print_int(ptf, va_arg(ptf->args, int));
 	if (ptf->format.type == 'u')
 		print_uint(ptf, va_arg(ptf->args, unsigned int));
 	if (ptf->format.type == 'x')
@@ -33,7 +33,7 @@ void	select_printer(t_printf *ptf)
 	if (ptf->format.type == 'X')
 		print_hex(ptf, va_arg(ptf->args, unsigned int), HEXUP);
 	if (ptf->format.type == '%')
-		ft_putchar('%', &ptf->size);
+		ft_putchar('%', 1, &ptf->size);
 	ptf->input = ++ptf->format.end;
 }
 
@@ -55,7 +55,7 @@ static void	read_input(t_printf *ptf)
 			continue ;
 		}
 		else
-			ft_putchar(*ptf->input, &ptf->size);
+			ft_putchar(*ptf->input, 1, &ptf->size);
 		ptf->input++;
 	}
 }
