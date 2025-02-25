@@ -6,17 +6,26 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 05:52:00 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/23 10:11:42 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/25 10:56:13 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	parse_format(t_printf *ptf, char *start)
+static inline void	handle_conflicts(t_printf *ptf)
+{
+	if (ptf->format.minus != -1)
+		ptf->format.zero = -1;
+	if (ptf->format.plus != -1)
+		ptf->format.space = -1;
+}
+
+void	parse_format(t_printf *ptf)
 {
 	while (*ptf->input)
 	{
-		if (is_type(*ptf->input) && type(ptf, ptf->format.start, ptf->input))
+		if (ft_strchr(TYPE, *ptf->input) && type(ptf, ptf->format.start,
+				ptf->input))
 			return ;
 		else if (*ptf->input == '#')
 			hash(ptf);
@@ -35,4 +44,5 @@ void	parse_format(t_printf *ptf, char *start)
 		else
 			return ;
 	}
+	handle_conflicts(ptf);
 }
