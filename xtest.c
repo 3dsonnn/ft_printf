@@ -7,7 +7,8 @@ int main()
 	int	i;
 	char *str = NULL;
 
-	i = printf("|%02c|", 'c');
+	i = printf("|%1d|", -42);
+
 	printf("\n%d\n", i);
 //	printf("%p\n", &i);
 //	i = printf("%-111111111%", 42);

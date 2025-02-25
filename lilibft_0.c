@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 19:07:05 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 01:57:03 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/25 16:39:11 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,22 @@ size_t	ft_strlen(char *str)
 	return (str - start);
 }
 
-int ft_nbrlen(int nbr)
+int	ft_nbrlen(int nbr)
 {
-    int  res;
+	int	res;
 
-    res = 0;
-    while (nbr)
-    {
-        nbr /= 10;
-        res++;
-    }
-    return (res);
+	res = 0;
+	if (nbr < 0)
+	{
+		nbr *= -1;
+		res++;
+	}
+	while (nbr)
+	{
+		nbr /= 10;
+		res++;
+	}
+	return (res);
 }
 
 size_t  ft_strchr_count(char *str, char c)

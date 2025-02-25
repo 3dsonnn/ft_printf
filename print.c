@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 05:50:39 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 13:01:06 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/25 17:38:45 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	print_char(t_printf *ptf, char c)
 	if (!ptf->format.minus)
 	{
 		if (ptf->format.width && ptf->format.width > 1)
-			put_space(ptf->format.width - 1, &ptf->size);
+			put_char_loop(' ', ptf->format.width - 1, &ptf->size);
 		if (ptf->format.zero && ptf->format.zero > 1)
-			put_space(ptf->format.zero - 1, &ptf->size);
+			put_char_loop(' ', ptf->format.zero - 1, &ptf->size);
 	}
 	ft_putchar(c, &ptf->size);
 	if (ptf->format.minus != -1 && ptf->format.minus > 1)
-		put_space(ptf->format.minus - 1, &ptf->size);
+		put_char_loop(' ', ptf->format.minus - 1, &ptf->size);
 }
 
 void	print_str(t_printf *ptf, char *str, int i, int len)
@@ -53,6 +53,44 @@ void	print_str(t_printf *ptf, char *str, int i, int len)
 	if (!ptf->format.minus)
 	{
 		if (ptf->format.width && ptf->format.width > ft_strlen(str))
+			put_char_loop(' ', ptf->format.width - len, &ptf->size);
+		if (ptf->format.zero && ptf->format.zero > ft_strlen(str))
+			put_char_loop(' ', ptf->format.zero - len, &ptf->size);
+	}
+	while (++i < len)
+		ft_putchar(str[i], &ptf->size);
+	if (ptf->format.minus != -1 && ptf->format.minus > ft_strlen(str))
+		put_char_loop(' ', ptf->format.minus - len, &ptf->size);
+}
+
+void	print_addr(t_printf *ptf, void *ptr)
+{
+}
+
+void	print_int(t_printf *ptf, int nbr, char *strnbr)
+{
+	int	len;
+
+	if (nbr < 0)
+		len = ft_nbrlen(nbr) - 1;
+	else
+		len = ft_nbrlen(nbr);
+	strnbr = ft_itoa(nbr);
+	if (!strnbr)
+		return ;
+	if (ptf->format.dot && ptf->format.dot > len)
+		put_char_loop('0', ptf->format.dot - len, &ptf->size);
+	if (ptf->format.width && ptf->format.width > ft_nbrlen(nbr))
+		put_char_loop(' ', ptf->format.width - ft_nbrlen(nbr), &ptf->size);
+	if (ptf->format.width && ptf->format.width > ft_nbrlen(nbr))
+		put_char_loop('0', ptf->format.width - ft_nbrlen(nbr), &ptf->size);
+	if (ptf->format.space && nbr > 0)
+		ft_putchar(' ', &ptf->size);
+	if (ptf->format.plus && nbr > 0)
+		ft_putchar(' ', &ptf->size);
+	if (!ptf->format.minus)
+	{
+		if (ptf->format.width && ptf->format.width > ft_strlen(str))
 			put_space(ptf->format.width - len, &ptf->size);
 		if (ptf->format.zero && ptf->format.zero > ft_strlen(str))
 			put_space(ptf->format.zero - len, &ptf->size);
@@ -61,14 +99,7 @@ void	print_str(t_printf *ptf, char *str, int i, int len)
 		ft_putchar(str[i], &ptf->size);
 	if (ptf->format.minus != -1 && ptf->format.minus > ft_strlen(str))
 		put_space(ptf->format.minus - len, &ptf->size);
-}
-
-void	print_addr(t_printf *ptf, void *ptr)
-{
-}
-
-void	print_int(t_printf *ptf, int nbr)
-{
+	
 }
 
 void	print_uint(t_printf *ptf, unsigned int nbr)
