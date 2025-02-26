@@ -7,11 +7,12 @@ int main()
 	int	n;
 	int	p;
 	char *str = NULL;
-
-	printf("---4---\n");
-	p = printf("|%-2d|", 42);
+	
+	printf("'.'\n");
+	printf("---3---\n");
+	p = printf("|%010d|", 42);
 	printf("\n");
-	n = printf("|%4d|", -42);
+	n = printf("|%010d|", -42);
 
 	printf("\n%d\n", p);
 	printf("%d\n", n);

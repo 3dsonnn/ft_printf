@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 07:59:11 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 19:55:03 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/26 19:22:56 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,8 @@ void	init_format(t_printf *ptf)
 	ptf->format.space = 0;
 	ptf->format.minus = 0;
 	ptf->format.width = 0;
-	ptf->format.start = ptf->input;
+	ptf->format.start = ptf->input - 1;
 	ptf->format.end = NULL;
-	ptf->aux.s = NULL,
-	ptf->aux.len = 0,
-	ptf->aux.neg = 0,
-	ptf->aux.i = 0
 }
 
 void	init(t_printf *ptf, const char *input)
@@ -45,10 +41,6 @@ void	init(t_printf *ptf, const char *input)
 		.format.width = 0,
 		.format.str = NULL,
         .format.start = NULL,
-        .format.end = NULL,
-		.aux.s = NULL,
-		.aux.len = 0,
-		.aux.neg = 0,
-		.aux.i = 0
+        .format.end = NULL
 	};
 }

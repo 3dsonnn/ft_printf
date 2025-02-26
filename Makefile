@@ -6,7 +6,7 @@
 #    By: efinda <efinda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 22:50:44 by efinda            #+#    #+#              #
-#    Updated: 2025/02/25 09:09:03 by efinda           ###   ########.fr        #
+#    Updated: 2025/02/26 19:51:43 by efinda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,17 @@ NAME =	libftprintf.a
 
 SRC =	ft_printf.c				\
 		format.c				\
-		utils.c					\
-		flags_process.c			\
-		flags_implementation.c	\
 		print.c					\
 		init.c					\
 		type.c					\
 		lilibft_0.c				\
 		lilibft_1.c				\
 		lilibft_2.c				\
+		char.c					\
+		string.c				\
+		integer.c				\
+		address.c				\
+		hexadecimal.c			\
 
 CC = cc
 FLAGS =

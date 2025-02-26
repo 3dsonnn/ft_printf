@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   hexadecimal.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 05:50:39 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/26 19:51:21 by efinda           ###   ########.fr       */
+/*   Created: 2025/02/26 19:12:45 by efinda            #+#    #+#             */
+/*   Updated: 2025/02/26 19:46:37 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c, size_t amount, size_t *size)
+void	print_hex(t_printf *ptf, unsigned int nbr, char *base)
 {
-	while (amount)
-	{
-		write(1, &c, 1);
-		(*size)++;
-		amount--;
-	}
 }

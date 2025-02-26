@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:50:54 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 19:54:09 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/26 19:42:12 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@
 # define HEXLOW "0123456789abcdef"
 # define HEXUP "0123456789ABCDEF"
 
+typedef struct s_nbr
+{
+	char		*str;
+	size_t		len;
+	int			neg;
+}				t_nbr;
+
 typedef struct s_format
 {
 	char		*str;
@@ -40,21 +47,12 @@ typedef struct s_format
 	size_t		width;
 }				t_format;
 
-typedef struct s_strnbr
-{
-	char		*s;
-	size_t		len;
-	int			i;
-	int			neg;
-}				t_strnbr;
-
 typedef struct s_printf
 {
 	char		*input;
 	size_t		size;
 	va_list		args;
 	t_format	format;
-	t_strnbr	aux;
 }				t_printf;
 
 // FT_PRINTF
@@ -96,16 +94,5 @@ void			print_str(t_printf *ptf, char *str, int i, int len);
 void			print_addr(t_printf *ptf, void *ptr);
 void			print_uint(t_printf *ptf, unsigned int nbr);
 void			print_hex(t_printf *ptf, unsigned int nbr, char *base);
-
-// FLAGS_PROCESS
-void			dot(t_printf *ptf);
-void			hash(t_printf *ptf);
-void			plus(t_printf *ptf);
-void			zero(t_printf *ptf);
-void			space(t_printf *ptf);
-void			minus(t_printf *ptf);
-void			width(t_printf *ptf);
-
-// FLAGS_IMPLEMENTATION
 
 #endif

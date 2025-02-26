@@ -6,18 +6,30 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 05:52:00 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 10:56:13 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/26 19:45:27 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static inline void	handle_conflicts(t_printf *ptf)
+static	void	skip_flag(t_printf *ptf, char id, size_t *flag)
 {
-	if (ptf->format.minus != -1)
-		ptf->format.zero = -1;
-	if (ptf->format.plus != -1)
-		ptf->format.space = -1;
+	while (*ptf->input && *ptf->input == id)
+	{
+		*(flag)++;
+		ptf->input++;
+	}
+}
+
+static	void	get_flag_value(t_printf *ptf, size_t *flag)
+{
+	if (!ft_isdigit(*ptf->input))
+		ptf->input++;
+	while (ft_isdigit(*ptf->input))
+	{
+		*(flag) = *(flag) * 10 + *ptf->input - '0';
+		ptf->input++;
+	}
 }
 
 void	parse_format(t_printf *ptf)
@@ -28,21 +40,20 @@ void	parse_format(t_printf *ptf)
 				ptf->input))
 			return ;
 		else if (*ptf->input == '#')
-			hash(ptf);
+			skip_flag(ptf, '#', &ptf->format.hash);
 		else if (*ptf->input == '+')
-			plus(ptf);
+			skip_flag(ptf, '+', &ptf->format.plus);
 		else if (*ptf->input == ' ')
-			space(ptf);
+			skip_flag(ptf, ' ', &ptf->format.space);
 		else if (*ptf->input == '.')
-			dot(ptf);
+			get_flag_value(ptf, &ptf->format.dot);
 		else if (*ptf->input == '0')
-			zero(ptf);
+			get_flag_value(ptf, &ptf->format.zero);
 		else if (*ptf->input == '-')
-			minus(ptf);
+			get_flag_value(ptf, &ptf->format.minus);
 		else if (ft_isdigit(*ptf->input))
-			width(ptf);
+			get_flag_value(ptf, &ptf->format.width);
 		else
 			return ;
 	}
-	handle_conflicts(ptf);
 }

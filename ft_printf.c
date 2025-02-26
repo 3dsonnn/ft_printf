@@ -6,17 +6,16 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:50:52 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 19:49:07 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/26 19:52:32 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	select_printer(t_printf *ptf)
+static	void	select_printer(t_printf *ptf)
 {
 	if (!ptf->format.type)
-		;
-	print_no_type(ptf);
+		print_no_type(ptf);
 	if (ptf->format.type == 'c')
 		print_char(ptf, (char)va_arg(ptf->args, int));
 	if (ptf->format.type == 's')
@@ -34,7 +33,7 @@ void	select_printer(t_printf *ptf)
 		print_hex(ptf, va_arg(ptf->args, unsigned int), HEXUP);
 	if (ptf->format.type == '%')
 		ft_putchar('%', 1, &ptf->size);
-	ptf->input = ++ptf->format.end;
+	ptf->input = ptf->format.end + 1;
 }
 
 static void	read_input(t_printf *ptf)

@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:14:16 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 11:11:36 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/26 19:24:56 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static int	type_check_width(t_printf *ptf, char *width)
 int	type(t_printf *ptf, char *start, char *end)
 {
 	ptf->format.end = end;
-	ptf->format.str = ft_strndup(start, end - start + 1);
+	ptf->format.str = ft_strndup(start + 1, end - start + 2);
 	if (ft_strchr(ptf->format.str, '.') && type_check_dot(ptf,
 			ft_strchr(ptf->format.str, '.'), 0, 0))
 		return (1);

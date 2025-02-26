@@ -1,29 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flags_implementation.c                             :+:      :+:    :+:   */
+/*   no_type.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 09:08:36 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 19:22:40 by efinda           ###   ########.fr       */
+/*   Created: 2025/02/26 19:48:25 by efinda            #+#    #+#             */
+/*   Updated: 2025/02/26 19:48:41 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    field_width(t_printf *ptf)
-{
-}
-
-void    alternate_form(t_printf *ptf)
-{
-}
-
-void    zero_pading(t_printf *ptf)
-{
-}
-
-void    precision(t_printf *ptf)
+void	print_no_type(t_printf *ptf)
 {
 }
