@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 22:58:44 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/25 16:37:14 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/27 00:45:13 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,23 @@ char	*ft_strndup(char *str, int n)
 	if (!res)
 		return (NULL);
     while (++i < n)
+		res[i] = str[i];
+	res[i] = '\0';
+	return (res);
+}
+
+char	*ft_strdup(char *str)
+{
+	char	*res;
+	int		i;
+
+    i = -1;
+    if (!str)
+		return (NULL);
+	res = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!res)
+		return (NULL);
+    while (str[++i])
 		res[i] = str[i];
 	res[i] = '\0';
 	return (res);

@@ -6,17 +6,17 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 05:52:00 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/26 19:45:27 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/27 06:55:48 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	void	skip_flag(t_printf *ptf, char id, size_t *flag)
+static	void	skip_flag(t_printf *ptf, char id, int *flag)
 {
 	while (*ptf->input && *ptf->input == id)
 	{
-		*(flag)++;
+		(*flag)++;
 		ptf->input++;
 	}
 }
@@ -27,7 +27,7 @@ static	void	get_flag_value(t_printf *ptf, size_t *flag)
 		ptf->input++;
 	while (ft_isdigit(*ptf->input))
 	{
-		*(flag) = *(flag) * 10 + *ptf->input - '0';
+		*flag = *flag * 10 + *ptf->input - '0';
 		ptf->input++;
 	}
 }

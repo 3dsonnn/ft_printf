@@ -6,13 +6,13 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:50:52 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/26 19:52:32 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/27 09:53:06 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	void	select_printer(t_printf *ptf)
+static void	select_printer(t_printf *ptf)
 {
 	if (!ptf->format.type)
 		print_no_type(ptf);
@@ -24,7 +24,7 @@ static	void	select_printer(t_printf *ptf)
 	if (ptf->format.type == 'p')
 		print_addr(ptf, va_arg(ptf->args, void *));
 	if (ptf->format.type == 'd' || ptf->format.type == 'i')
-		print_int(ptf, va_arg(ptf->args, int));
+		print_int(ptf, va_arg(ptf->args, int), (t_nbr){NULL, 0, 0, -1});
 	if (ptf->format.type == 'u')
 		print_uint(ptf, va_arg(ptf->args, unsigned int));
 	if (ptf->format.type == 'x')
@@ -53,8 +53,7 @@ static void	read_input(t_printf *ptf)
 			select_printer(ptf);
 			continue ;
 		}
-		else
-			ft_putchar(*ptf->input, 1, &ptf->size);
+		ft_putchar(*ptf->input, 1, &ptf->size);
 		ptf->input++;
 	}
 }

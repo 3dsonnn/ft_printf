@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 19:50:15 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/26 19:50:33 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/26 21:18:33 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	print_char(t_printf *ptf, char c)
 			ft_putchar(' ', ptf->format.zero - 1, &ptf->size);
 	}
 	ft_putchar(c, 1, &ptf->size);
-	if (ptf->format.minus != -1 && ptf->format.minus > 1)
+	if (ptf->format.minus && ptf->format.minus > 1)
 		ft_putchar(' ', ptf->format.minus - 1, &ptf->size);
 }

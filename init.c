@@ -6,11 +6,24 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 07:59:11 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/26 19:22:56 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/27 17:41:43 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	init_nbr(t_nbr *nbr, int n)
+{
+	nbr->str = ft_itoa(n);
+	if (!nbr->str)
+		return (1);
+	nbr->len = ft_strlen(nbr->str);
+	if (*nbr->str == '-')
+		nbr->neg = 1;
+	else
+		nbr->neg = 0;
+	return (0);
+}
 
 void	init_format(t_printf *ptf)
 {

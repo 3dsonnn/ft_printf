@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:50:54 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/26 19:42:12 by efinda           ###   ########.fr       */
+/*   Updated: 2025/02/27 17:41:51 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_nbr
 	char		*str;
 	size_t		len;
 	int			neg;
+	int			i;
 }				t_nbr;
 
 typedef struct s_format
@@ -73,11 +74,13 @@ char			*ft_strqbrk(char *str, char *accept);
 // LILIBFT_2
 void			ft_strfree(char **str);
 char			*ft_strndup(char *str, int n);
+char			*ft_strdup(char *str);
 char			*ft_itoa(int nbr);
 
 // INIT
 void			init(t_printf *ptf, const char *input);
 void			init_format(t_printf *ptf);
+int				init_nbr(t_nbr *nbr, int n);
 
 // FORMAT
 void			parse_format(t_printf *ptf);
@@ -88,7 +91,7 @@ int				type(t_printf *ptf, char *start, char *end);
 // PRINT
 void			ft_putchar(char c, size_t amount, size_t *size);
 void			print_no_type(t_printf *ptf);
-void			print_int(t_printf *ptf, int nbr);
+void			print_int(t_printf *ptf, int n, t_nbr nbr);
 void			print_char(t_printf *ptf, char c);
 void			print_str(t_printf *ptf, char *str, int i, int len);
 void			print_addr(t_printf *ptf, void *ptr);

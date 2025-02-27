@@ -4,18 +4,12 @@
 
 int main()
 {
-	int	n;
-	int	p;
-	char *str = NULL;
-	
-	printf("'.'\n");
-	printf("---3---\n");
-	p = printf("|%010d|", 42);
-	printf("\n");
-	n = printf("|%010d|", -42);
-
-	printf("\n%d\n", p);
-	printf("%d\n", n);
+	printf("4\n");
+	printf("'3'|%4d|\n", 42);
+	printf("'.'|%.4d|\n", 42);
+	printf("'-'|%-4d|\n", 42);
+	printf("'0'|%04d|\n", 42);
+}
 
 //	printf("%p\n", &i);
 //	i = printf("%-111111111%", 42);
@@ -23,4 +17,3 @@ int main()
 //	printf("\n%d\n", i);
 //	i = printf("|%#X|\n", 42);
 //	printf("%d\n", i);
-}
