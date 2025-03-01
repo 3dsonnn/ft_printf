@@ -6,13 +6,14 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:50:54 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/27 17:41:51 by efinda           ###   ########.fr       */
+/*   Updated: 2025/03/01 12:32:44 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include "libft/libft.h"
 # include <limits.h>
 # include <stdarg.h>
 # include <stdio.h>
@@ -28,6 +29,7 @@
 typedef struct s_nbr
 {
 	char		*str;
+	char		*tmp;
 	size_t		len;
 	int			neg;
 	int			i;
@@ -42,10 +44,10 @@ typedef struct s_format
 	int			hash;
 	int			space;
 	int			plus;
-	size_t		minus;
-	size_t		zero;
-	size_t		dot;
-	size_t		width;
+	int			zero;
+	int			minus;
+	long		dot;
+	long		width;
 }				t_format;
 
 typedef struct s_printf
@@ -58,24 +60,6 @@ typedef struct s_printf
 
 // FT_PRINTF
 int				ft_printf(const char *input, ...);
-
-// LILIBFT_0
-int				ft_nbrlen(int nbr);
-extern int		ft_isdigit(char c);
-size_t			ft_strlen(char *str);
-size_t			ft_strchr_count(char *str, char c);
-
-// LILIBFT_1
-char			*ft_strchr(char *str, char c);
-size_t			ft_strspn(char *str, char *accept);
-char			*ft_strpbrk(char *str, char *accept);
-char			*ft_strqbrk(char *str, char *accept);
-
-// LILIBFT_2
-void			ft_strfree(char **str);
-char			*ft_strndup(char *str, int n);
-char			*ft_strdup(char *str);
-char			*ft_itoa(int nbr);
 
 // INIT
 void			init(t_printf *ptf, const char *input);
@@ -90,6 +74,9 @@ int				type(t_printf *ptf, char *start, char *end);
 
 // PRINT
 void			ft_putchar(char c, size_t amount, size_t *size);
+void			ft_putstr(char *str, int i, size_t *size);
+
+// 
 void			print_no_type(t_printf *ptf);
 void			print_int(t_printf *ptf, int n, t_nbr nbr);
 void			print_char(t_printf *ptf, char c);

@@ -6,49 +6,60 @@
 #    By: efinda <efinda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 22:50:44 by efinda            #+#    #+#              #
-#    Updated: 2025/02/26 22:21:06 by efinda           ###   ########.fr        #
+#    Updated: 2025/03/01 09:17:45 by efinda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	libftprintf.a
 
-SRC =	ft_printf.c				\
-		init.c					\
-		format.c				\
-		type.c					\
-		no_type.c				\
-		char.c					\
-		integer.c				\
-		string.c				\
-		address.c				\
-		hexadecimal.c			\
-		print.c					\
-		lilibft_0.c				\
-		lilibft_1.c				\
-		lilibft_2.c				\
-
 CC = cc
 FLAGS =
 # FLAGS = -Wall -Wextra -Werror
+
+SRC =	src/ft_printf.c				\
+		src/init.c					\
+		src/format.c				\
+		src/type.c					\
+		src/no_type.c				\
+		src/char.c					\
+		src/integer.c				\
+		src/string.c				\
+		src/address.c				\
+		src/hexadecimal.c			\
+		src/print.c					\
+
+LIBFT =	libft/libft.a
 LIB =	ar rcs
 RM = rm -rf
-OBJ =	$(SRC:%.c=%.o)
+OBJ_DIR = obj
+OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 
-all: $(NAME)
+all: $(LIBFT) $(OBJ_DIR) $(NAME)
 
-$(NAME): $(OBJ)
+$(LIBFT):
+	@$(MAKE) -s -C libft
+
+$(OBJ_DIR):
+	@mkdir -p $@
+
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(NAME): $(OBJ) $(LIBFT)
 	$(LIB) $(NAME) $(OBJ)
-	#	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-
-%.o: %.c
-		$(CC) $(FLAGS) -c $< -o $@
+	@cp $(LIBFT) .
+	#$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ_DIR)
+	$(MAKE) -s -C libft clean
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	$(MAKE) -s -C libft fclean
 
 re: fclean all
+	$(MAKE) -s -C libft re
 
 .PHONY: all clean fclean re
