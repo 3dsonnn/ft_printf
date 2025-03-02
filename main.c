@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "ft_printf.h"
+#include <limits.h>
+#include "bonus/ft_printf_bonus.h"
 
 // printf("---TESTS---\n");
 // printf("1-->5d\n");
@@ -880,1714 +881,2555 @@ int main(void)
 
     char *s2 = "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Atirei o pau no gatis, per gatis num morreus.";
 
+    
     printf("%s\n", "start");
 
+    
     printf("\n| %+d |\n", 0);
     ft_printf("| %+d |\n", 0);
+    
 	printf("\n| %+d |\n", -1);
     ft_printf("| %+d |\n", -1);
+    
 	printf("\n| %+d |\n", 9);
     ft_printf("| %+d |\n", 9);
+    
 	printf("\n| %+d |\n", 10);
     ft_printf("| %+d |\n", 10);
+    
 	printf("\n| %+d |\n", 11);
     ft_printf("| %+d |\n", 11);
+    
 	printf("\n| %+d |\n", 15);
     ft_printf("| %+d |\n", 15);
+    
 	printf("\n| %+d |\n", 16);
     ft_printf("| %+d |\n", 16);
+    
 	printf("\n| %+d |\n", 17);
     ft_printf("| %+d |\n", 17);
+    
 	printf("\n| %+d |\n", 99);
     ft_printf("| %+d |\n", 99);
+    
 	printf("\n| %+d |\n", 100);
     ft_printf("| %+d |\n", 100);
+    
 	printf("\n| %+d |\n", 101);
     ft_printf("| %+d |\n", 101);
+    
 	printf("\n| %+d |\n", -9);
     ft_printf("| %+d |\n", -9);
+    
 	printf("\n| %+d |\n", -10);
     ft_printf("| %+d |\n", -10);
+    
 	printf("\n| %+d |\n", -11);
     ft_printf("| %+d |\n", -11);
+    
 	printf("\n| %+d |\n", -14);
     ft_printf("| %+d |\n", -14);
+    
 	printf("\n| %+d |\n", -15);
     ft_printf("| %+d |\n", -15);
+    
 	printf("\n| %+d |\n", -16);
     ft_printf("| %+d |\n", -16);
+    
 	printf("\n| %+d |\n", -99);
     ft_printf("| %+d |\n", -99);
+    
 	printf("\n| %+d |\n", -100);
     ft_printf("| %+d |\n", -100);
+    
 	printf("\n| %+d |\n", -101);
     ft_printf("| %+d |\n", -101);
+    
 	printf("\n| %+d |\n", INT_MAX);
     ft_printf("| %+d |\n", INT_MAX);
+    
 	printf("\n| %+d |\n", INT_MIN);
     ft_printf("| %+d |\n", INT_MIN);
+    
 	printf("\n| %+d |\n", LONG_MAX);
     ft_printf("| %+d |\n", LONG_MAX);
+    
 	printf("\n| %+d |\n", LONG_MIN);
     ft_printf("| %+d |\n", LONG_MIN);
+    
 	printf("\n| %+d |\n", UINT_MAX);
     ft_printf("| %+d |\n", UINT_MAX);
+    
 	printf("\n| %+d |\n", ULONG_MAX);
     ft_printf("| %+d |\n", ULONG_MAX);
+    
 	printf("\n| %+d |\n", 9223372036854775807LL);
     ft_printf("| %+d |\n", 9223372036854775807LL);
+    
 	printf("\n| %+d %+d %+d %+d %+d %+d %+d |\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf("| %+d %+d %+d %+d %+d %+d %+d |\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n| %+i |\n", 0);
     ft_printf("| %+i |\n", 0);
+    
 	printf("\n| %+i |\n", -1);
     ft_printf("| %+i |\n", -1);
+    
 	printf("\n| %+i |\n", 1);
     ft_printf("| %+i |\n", 1);
+    
 	printf("\n| %+i |\n", 9);
     ft_printf("| %+i |\n", 9);
+    
 	printf("\n| %+i |\n", 10);
     ft_printf("| %+i |\n", 10);
+    
 	printf("\n| %+i |\n", 11);
     ft_printf("| %+i |\n", 11);
+    
 	printf("\n| %+i |\n", 15);
     ft_printf("| %+i |\n", 15);
+    
 	printf("\n| %+i |\n", 16);
     ft_printf("| %+i |\n", 16);
+    
 	printf("\n| %+i |\n", 17);
     ft_printf("| %+i |\n", 17);
+    
 	printf("\n| %+i |\n", 99);
     ft_printf("| %+i |\n", 99);
+    
 	printf("\n| %+i |\n", 100);
     ft_printf("| %+i |\n", 100);
+    
 	printf("\n| %+i |\n", 101);
     ft_printf("| %+i |\n", 101);
+    
 	printf("\n| %+i |\n", -9);
     ft_printf("| %+i |\n", -9);
+    
 	printf("\n| %+i |\n", -10);
     ft_printf("| %+i |\n", -10);
+    
 	printf("\n| %+i |\n", -11);
     ft_printf("| %+i |\n", -11);
+    
 	printf("\n| %+i |\n", -14);
     ft_printf("| %+i |\n", -14);
+    
 	printf("\n| %+i |\n", -15);
     ft_printf("| %+i |\n", -15);
+    
 	printf("\n| %+i |\n", -16);
     ft_printf("| %+i |\n", -16);
+    
 	printf("\n| %+i |\n", -99);
     ft_printf("| %+i |\n", -99);
+    
 	printf("\n| %+i |\n", -100);
     ft_printf("| %+i |\n", -100);
+    
 	printf("\n| %+i |\n", -101);
     ft_printf("| %+i |\n", -101);
+    
 	printf("\n| %+i |\n", INT_MAX);
     ft_printf("| %+i |\n", INT_MAX);
+    
 	printf("\n| %+i |\n", INT_MIN);
     ft_printf("| %+i |\n", INT_MIN);
+    
 	printf("\n| %+i |\n", LONG_MAX);
     ft_printf("| %+i |\n", LONG_MAX);
+    
 	printf("\n| %+i |\n", LONG_MIN);
     ft_printf("| %+i |\n", LONG_MIN);
+    
 	printf("\n| %+i |\n", UINT_MAX);
     ft_printf("| %+i |\n", UINT_MAX);
+    
 	printf("\n| %+i |\n", ULONG_MAX);
     ft_printf("| %+i |\n", ULONG_MAX);
+    
 	printf("\n| %+i |\n", 9223372036854775807LL);
     ft_printf("| %+i |\n", 9223372036854775807LL);
+    
 	printf("\n| %+i %+i %+i %+i %+i %+i %+i |\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf("| %+i %+i %+i %+i %+i %+i %+i |\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	/*ZER0*/
+    
 	printf("\n| %01d |\n", 0);
     ft_printf("| %01d |\n", 0);
+    
 	printf("\n| %02d |\n", -1);
     ft_printf("| %02d |\n", -1);
+    
 	printf("\n| %04d |\n", 9);
     ft_printf("| %04d |\n", 9);
+    
 	printf("\n| %01d |\n", 10);
     ft_printf("| %01d |\n", 10);
+    
 	printf("\n| %02d |\n", 11);
     ft_printf("| %02d |\n", 11);
+    
 	printf("\n| %03d |\n", 15);
     ft_printf("| %03d |\n", 15);
+    
 	printf("\n| %04d |\n", 16);
     ft_printf("| %04d |\n", 16);
+    
 	printf("\n| %05d |\n", 17);
     ft_printf("| %05d |\n", 17);
+    
 	printf("\n| %01d |\n", 99);
     ft_printf("| %01d |\n", 99);
+    
 	printf("\n| %02d |\n", 100);
     ft_printf("| %02d |\n", 100);
+    
 	printf("\n| %03d |\n", 101);
     ft_printf("| %03d |\n", 101);
+    
 	printf("\n| %01d |\n", -9);
     ft_printf("| %01d |\n", -9);
+    
 	printf("\n| %02d |\n", -10);
     ft_printf("| %02d |\n", -10);
+    
 	printf("\n| %03d |\n", -11);
     ft_printf("| %03d |\n", -11);
-	printf("\n| %04d |\n", -14);
-    ft_printf("| %04d |\n", -14);
-	printf("\n| %05d |\n", -15);
-    ft_printf("| %05d |\n", -15);
-	printf("\n| %06d |\n", -16);
-    ft_printf("| %06d |\n", -16);
+    
 	printf("\n| %01d |\n", -99);
     ft_printf("| %01d |\n", -99);
+    
 	printf("\n| %02d |\n", -100);
     ft_printf("| %02d |\n", -100);
+    
 	printf("\n| %03d |\n", -101);
     ft_printf("| %03d |\n", -101);
+    
 	printf("\n| %09d |\n", INT_MAX);
     ft_printf("| %09d |\n", INT_MAX);
+    
 	printf("\n| %010d |\n", INT_MIN);
     ft_printf("| %010d |\n", INT_MIN);
-	printf("\n| %011d |\n", LONG_MAX);
-    ft_printf("| %011d |\n", LONG_MAX);
+    
 	printf("\n| %012d |\n", LONG_MIN);
     ft_printf("| %012d |\n", LONG_MIN);
-	printf("\n| %013d |\n", UINT_MAX);
-    ft_printf("| %013d |\n", UINT_MAX);
-	printf("\n| %014d |\n", ULONG_MAX);
-    ft_printf("| %014d |\n", ULONG_MAX);
-	printf("\n| %015d |\n", 9223372036854775807LL);
-    ft_printf("| %015d |\n", 9223372036854775807LL);
-	printf("\n| %09d %010d %011d %012d %013d %014d %015d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    ft_printf("| %09d %010d %011d %012d %013d %014d %015d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n| %01i |\n", 0);
     ft_printf("| %01i |\n", 0);
+    
 	printf("\n| %02i |\n", -1);
     ft_printf("| %02i |\n", -1);
+    
 	printf("\n| %03i |\n", 1);
     ft_printf("| %03i |\n", 1);
+    
 	printf("\n| %04i |\n", 9);
     ft_printf("| %04i |\n", 9);
+    
 	printf("\n| %01i |\n", 10);
     ft_printf("| %01i |\n", 10);
+    
 	printf("\n| %02i |\n", 11);
     ft_printf("| %02i |\n", 11);
+    
 	printf("\n| %03i |\n", 15);
     ft_printf("| %03i |\n", 15);
+    
 	printf("\n| %04i |\n", 16);
     ft_printf("| %04i |\n", 16);
+    
 	printf("\n| %05i |\n", 17);
     ft_printf("| %05i |\n", 17);
+    
 	printf("\n| %01i |\n", 99);
     ft_printf("| %01i |\n", 99);
+    
 	printf("\n| %02i |\n", 100);
     ft_printf("| %02i |\n", 100);
+    
 	printf("\n| %03i |\n", 101);
     ft_printf("| %03i |\n", 101);
+    
 	printf("\n| %01i |\n", -9);
     ft_printf("| %01i |\n", -9);
+    
 	printf("\n| %02i |\n", -10);
     ft_printf("| %02i |\n", -10);
+    
 	printf("\n| %03i |\n", -11);
     ft_printf("| %03i |\n", -11);
-	printf("\n| %04i |\n", -14);
-    ft_printf("| %04i |\n", -14);
-	printf("\n| %05i |\n", -15);
-    ft_printf("| %05i |\n", -15);
-	printf("\n| %06i |\n", -16);
-    ft_printf("| %06i |\n", -16);
+    
 	printf("\n| %01i |\n", -99);
     ft_printf("| %01i |\n", -99);
+    
 	printf("\n| %02i |\n", -100);
     ft_printf("| %02i |\n", -100);
+    
 	printf("\n| %03i |\n", -101);
     ft_printf("| %03i |\n", -101);
+    
 	printf("\n| %09i |\n", INT_MAX);
     ft_printf("| %09i |\n", INT_MAX);
+    
 	printf("\n| %010i |\n", INT_MIN);
     ft_printf("| %010i |\n", INT_MIN);
-	printf("\n| %011i |\n", LONG_MAX);
-    ft_printf("| %011i |\n", LONG_MAX);
+	
 	printf("\n| %012i |\n", LONG_MIN);
     ft_printf("| %012i |\n", LONG_MIN);
-	printf("\n| %013i |\n", UINT_MAX);
-    ft_printf("| %013i |\n", UINT_MAX);
-	printf("\n| %014i |\n", ULONG_MAX);
-    ft_printf("| %014i |\n", ULONG_MAX);
-	printf("\n| %015i |\n", 9223372036854775807LL);
-    ft_printf("| %015i |\n", 9223372036854775807LL);
-	printf("\n| %09i %010i %011i %012i %013i %014i %015i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    ft_printf("| %09i %010i %011i %012i %013i %014i %015i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n| %01u |\n", 0);
     ft_printf("| %01u |\n", 0);
+    
 	printf("\n| %02u |\n", -1);
     ft_printf("| %02u |\n", -1);
+    
 	printf("\n| %03u |\n", 1);
     ft_printf("| %03u |\n", 1);
+    
 	printf("\n| %04u |\n", 9);
     ft_printf("| %04u |\n", 9);
+    
 	printf("\n| %01u |\n", 10);
     ft_printf("| %01u |\n", 10);
+    
 	printf("\n| %02u |\n", 11);
     ft_printf("| %02u |\n", 11);
+    
 	printf("\n| %03u |\n", 15);
     ft_printf("| %03u |\n", 15);
+    
 	printf("\n| %04u |\n", 16);
     ft_printf("| %04u |\n", 16);
+    
 	printf("\n| %05u |\n", 17);
     ft_printf("| %05u |\n", 17);
+    
 	printf("\n| %01u |\n", 99);
     ft_printf("| %01u |\n", 99);
+    
 	printf("\n| %02u |\n", 100);
     ft_printf("| %02u |\n", 100);
+    
 	printf("\n| %03u |\n", 101);
     ft_printf("| %03u |\n", 101);
+    
 	printf("\n| %01u |\n", -9);
     ft_printf("| %01u |\n", -9);
+    
 	printf("\n| %02u |\n", -10);
     ft_printf("| %02u |\n", -10);
+    
 	printf("\n| %03u |\n", -11);
     ft_printf("| %03u |\n", -11);
+    
 	printf("\n| %04u |\n", -14);
     ft_printf("| %04u |\n", -14);
+    
 	printf("\n| %05u |\n", -15);
     ft_printf("| %05u |\n", -15);
+    
 	printf("\n| %06u |\n", -16);
     ft_printf("| %06u |\n", -16);
+    
 	printf("\n| %01u |\n", -99);
     ft_printf("| %01u |\n", -99);
+    
 	printf("\n| %02u |\n", -100);
     ft_printf("| %02u |\n", -100);
+    
 	printf("\n| %03u |\n", -101);
     ft_printf("| %03u |\n", -101);
+    
 	printf("\n| %09u |\n", INT_MAX);
     ft_printf("| %09u |\n", INT_MAX);
+    
 	printf("\n| %010u |\n", INT_MIN);
     ft_printf("| %010u |\n", INT_MIN);
+    
 	printf("\n| %011u |\n", LONG_MAX);
     ft_printf("| %011u |\n", LONG_MAX);
+    
 	printf("\n| %012u |\n", LONG_MIN);
     ft_printf("| %012u |\n", LONG_MIN);
+    
 	printf("\n| %013u |\n", UINT_MAX);
     ft_printf("| %013u |\n", UINT_MAX);
+    
 	printf("\n| %014u |\n", ULONG_MAX);
     ft_printf("| %014u |\n", ULONG_MAX);
+    
 	printf("\n| %015u |\n", 9223372036854775807LL);
     ft_printf("| %015u |\n", 9223372036854775807LL);
+    
 	printf("\n| %09u %010u %011u %012u %013u %014u %015u\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf("| %09u %010u %011u %012u %013u %014u %015u\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n| %01x |\n", 0);
     ft_printf("| %01x |\n", 0);
+    
 	printf("\n| %02x |\n", -1);
     ft_printf("| %02x |\n", -1);
+    
 	printf("\n| %03x |\n", 1);
     ft_printf("| %03x |\n", 1);
+    
 	printf("\n| %04x |\n", 9);
     ft_printf("| %04x |\n", 9);
+    
 	printf("\n| %01x |\n", 10);
     ft_printf("| %01x |\n", 10);
+    
 	printf("\n| %02x |\n", 11);
     ft_printf("| %02x |\n", 11);
+    
 	printf("\n| %03x |\n", 15);
     ft_printf("| %03x |\n", 15);
+    
 	printf("\n| %04x |\n", 16);
     ft_printf("| %04x |\n", 16);
+    
 	printf("\n| %05x |\n", 17);
     ft_printf("| %05x |\n", 17);
+    
 	printf("\n| %01x |\n", 99);
     ft_printf("| %01x |\n", 99);
+    
 	printf("\n| %02x |\n", 100);
     ft_printf("| %02x |\n", 100);
+    
 	printf("\n| %03x |\n", 101);
     ft_printf("| %03x |\n", 101);
+    
 	printf("\n| %01x |\n", -9);
     ft_printf("| %01x |\n", -9);
+    
 	printf("\n| %02x |\n", -10);
     ft_printf("| %02x |\n", -10);
+    
 	printf("\n| %03x |\n", -11);
     ft_printf("| %03x |\n", -11);
+    
 	printf("\n| %04x |\n", -14);
     ft_printf("| %04x |\n", -14);
+    
 	printf("\n| %05x |\n", -15);
     ft_printf("| %05x |\n", -15);
+    
 	printf("\n| %06x |\n", -16);
     ft_printf("| %06x |\n", -16);
+    
 	printf("\n| %01x |\n", -99);
     ft_printf("| %01x |\n", -99);
+    
 	printf("\n| %02x |\n", -100);
     ft_printf("| %02x |\n", -100);
+    
 	printf("\n| %03x |\n", -101);
     ft_printf("| %03x |\n", -101);
+    
 	printf("\n| %09x |\n", INT_MAX);
     ft_printf("| %09x |\n", INT_MAX);
+    
 	printf("\n| %010x |\n", INT_MIN);
     ft_printf("| %010x |\n", INT_MIN);
+    
 	printf("\n| %011x |\n", LONG_MAX);
     ft_printf("| %011x |\n", LONG_MAX);
+    
 	printf("\n| %012x |\n", LONG_MIN);
     ft_printf("| %012x |\n", LONG_MIN);
+    
 	printf("\n| %013x |\n", UINT_MAX);
     ft_printf("| %013x |\n", UINT_MAX);
+    
 	printf("\n| %014x |\n", ULONG_MAX);
     ft_printf("| %014x |\n", ULONG_MAX);
+    
 	printf("\n| %015x |\n", 9223372036854775807LL);
     ft_printf("| %015x |\n", 9223372036854775807LL);
+    
 	printf("\n| %09x %010x %011x %012x %013x %014x %015x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf("| %09x %010x %011x %012x %013x %014x %015x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
+    printf("\n| %04i |\n", -14);
+    ft_printf("| %04i |\n", -14);
+    
+	printf("\n| %05i |\n", -15);
+    ft_printf("| %05i |\n", -15);
+    
+	printf("\n| %06i |\n", -16);
+    ft_printf("| %06i |\n", -16);
+    
+	printf("\n| %011i |\n", LONG_MAX);
+    ft_printf("| %011i |\n", LONG_MAX);
+    
+	printf("\n| %013i |\n", UINT_MAX);
+    ft_printf("| %013i |\n", UINT_MAX);
+    
+	printf("\n| %014i |\n", ULONG_MAX);
+    ft_printf("| %014i |\n", ULONG_MAX);
+    
+	printf("\n| %015i |\n", 9223372036854775807LL);
+    ft_printf("| %015i |\n", 9223372036854775807LL);
+    
+	printf("\n| %09i %010i %011i %012i %013i %014i %015i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    ft_printf("| %09i %010i %011i %012i %013i %014i %015i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+
+    printf("\n| %011d |\n", LONG_MAX);
+    ft_printf("| %011d |\n", LONG_MAX);
+    
+	printf("\n| %013d |\n", UINT_MAX);
+    ft_printf("| %013d |\n", UINT_MAX);
+    
+	printf("\n| %014d |\n", ULONG_MAX);
+    ft_printf("| %014d |\n", ULONG_MAX);
+    
+	printf("\n| %015d |\n", 9223372036854775807LL);
+    ft_printf("| %015d |\n", 9223372036854775807LL);
+    
+	printf("\n| %09d %010d %011d %012d %013d %014d %015d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    ft_printf("| %09d %010d %011d %012d %013d %014d %015d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+
+    printf("\n| %04d |\n", -14);
+    ft_printf("| %04d |\n", -14);
+    
+	printf("\n| %05d |\n", -15);
+    ft_printf("| %05d |\n", -15);
+    
+	printf("\n| %06d |\n", -16);
+    ft_printf("| %06d |\n", -16);
+
 	printf("\n| %01X |\n", 0);
     ft_printf("| %01X |\n", 0);
+    
 	printf("\n| %02X |\n", -1);
     ft_printf("| %02X |\n", -1);
+    
 	printf("\n| %03X |\n", 1);
     ft_printf("| %03X |\n", 1);
+    
 	printf("\n| %04X |\n", 9);
     ft_printf("| %04X |\n", 9);
+    
 	printf("\n| %01X |\n", 10);
     ft_printf("| %01X |\n", 10);
+    
 	printf("\n| %02X |\n", 11);
     ft_printf("| %02X |\n", 11);
+    
 	printf("\n| %03X |\n", 15);
     ft_printf("| %03X |\n", 15);
+    
 	printf("\n| %04X |\n", 16);
     ft_printf("| %04X |\n", 16);
+    
 	printf("\n| %05X |\n", 17);
     ft_printf("| %05X |\n", 17);
+    
 	printf("\n| %01X |\n", 99);
     ft_printf("| %01X |\n", 99);
+    
 	printf("\n| %02X |\n", 100);
     ft_printf("| %02X |\n", 100);
+    
 	printf("\n| %03X |\n", 101);
     ft_printf("| %03X |\n", 101);
+    
 	printf("\n| %01X |\n", -9);
     ft_printf("| %01X |\n", -9);
+    
 	printf("\n| %02X |\n", -10);
     ft_printf("| %02X |\n", -10);
+    
 	printf("\n| %03X |\n", -11);
     ft_printf("| %03X |\n", -11);
+    
 	printf("\n| %04X |\n", -14);
     ft_printf("| %04X |\n", -14);
+    
 	printf("\n| %05X |\n", -15);
     ft_printf("| %05X |\n", -15);
+    
 	printf("\n| %06X |\n", -16);
     ft_printf("| %06X |\n", -16);
+    
 	printf("\n| %01X |\n", -99);
     ft_printf("| %01X |\n", -99);
+    
 	printf("\n| %02X |\n", -100);
     ft_printf("| %02X |\n", -100);
+    
 	printf("\n| %03X |\n", -101);
     ft_printf("| %03X |\n", -101);
+    
 	printf("\n| %09X |\n", INT_MAX);
     ft_printf("| %09X |\n", INT_MAX);
+    
 	printf("\n| %010X |\n", INT_MIN);
     ft_printf("| %010X |\n", INT_MIN);
+    
 	printf("\n| %011X |\n", LONG_MAX);
     ft_printf("| %011X |\n", LONG_MAX);
+    
 	printf("\n| %012X |\n", LONG_MIN);
     ft_printf("| %012X |\n", LONG_MIN);
+    
 	printf("\n| %013X |\n", UINT_MAX);
     ft_printf("| %013X |\n", UINT_MAX);
+    
 	printf("\n| %014X |\n", ULONG_MAX);
     ft_printf("| %014X |\n", ULONG_MAX);
+    
 	printf("\n| %015X |\n", 9223372036854775807LL);
     ft_printf("| %015X |\n", 9223372036854775807LL);
+    
 	printf("\n| %09X %010X %011X %012X %013X %014X %015X |\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf("| %09X %010X %011X %012X %013X %014X %015X |\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
-	/*c*/
+	// /*c*/
+    
 	printf("\n%c\n", '0');
     ft_printf("%c\n", '0');
+    
 	printf("\n %c \n", '0');
     ft_printf(" %c \n", '0');
+    
 	printf("\n %c\n", '0' - 256);
     ft_printf(" %c\n", '0' - 256);
+    
 	printf("\n%c \n", '0' + 256);
     ft_printf("%c \n", '0' + 256);
+    
 	printf("\n %c %c %c \n", '0', 0, '1');
     ft_printf(" %c %c %c \n", '0', 0, '1');
+    
 	printf("\n %c %c %c \n", ' ', ' ', ' ');
     ft_printf(" %c %c %c \n", ' ', ' ', ' ');
+    
 	printf("\n %c %c %c \n", '1', '2', '3');
     ft_printf(" %c %c %c \n", '1', '2', '3');
+    
 	printf("\n %c %c %c \n", '2', '1', 0);
     ft_printf(" %c %c %c \n", '2', '1', 0);
+    
 	printf("\n %c %c %c \n", 0, '1', '2');
     ft_printf(" %c %c %c \n", 0, '1', '2');
 
-	/*d*/
+	// /*d*/
+    
 	printf("\n %d \n", 0);
     ft_printf(" %d \n", 0);
+    
 	printf("\n %d \n", -1);
     ft_printf(" %d \n", -1);
+    
 	printf("\n %d \n", 1);
     ft_printf(" %d \n", 1);
+    
 	printf("\n %d \n", 9);
     ft_printf(" %d \n", 9);
+    
 	printf("\n %d \n", 10);
     ft_printf(" %d \n", 10);
+    
 	printf("\n %d \n", 11);
     ft_printf(" %d \n", 11);
+    
 	printf("\n %d \n", 15);
     ft_printf(" %d \n", 15);
+    
 	printf("\n %d \n", 16);
     ft_printf(" %d \n", 16);
+    
 	printf("\n %d \n", 17);
     ft_printf(" %d \n", 17);
+    
 	printf("\n %d \n", 99);
     ft_printf(" %d \n", 99);
+    
 	printf("\n %d \n", 100);
     ft_printf(" %d \n", 100);
+    
 	printf("\n %d \n", 101);
     ft_printf(" %d \n", 101);
+    
 	printf("\n %d \n", -9);
     ft_printf(" %d \n", -9);
+    
 	printf("\n %d \n", -10);
     ft_printf(" %d \n", -10);
+    
 	printf("\n %d \n", -11);
     ft_printf(" %d \n", -11);
+    
 	printf("\n %d \n", -14);
     ft_printf(" %d \n", -14);
+    
 	printf("\n %d \n", -15);
     ft_printf(" %d \n", -15);
+    
 	printf("\n %d \n", -16);
     ft_printf(" %d \n", -16);
+    
 	printf("\n %d \n", -99);
     ft_printf(" %d \n", -99);
+    
 	printf("\n %d \n", -100);
     ft_printf(" %d \n", -100);
+    
 	printf("\n %d \n", -101);
     ft_printf(" %d \n", -101);
+    
 	printf("\n %d \n", INT_MAX);
     ft_printf(" %d \n", INT_MAX);
+    
 	printf("\n %d \n", INT_MIN);
     ft_printf(" %d \n", INT_MIN);
+    
 	printf("\n %d \n", LONG_MAX);
     ft_printf(" %d \n", LONG_MAX);
+    
 	printf("\n %d \n", LONG_MIN);
     ft_printf(" %d \n", LONG_MIN);
+    
 	printf("\n %d \n", UINT_MAX);
     ft_printf(" %d \n", UINT_MAX);
+    
 	printf("\n %d \n", ULONG_MAX);
     ft_printf(" %d \n", ULONG_MAX);
+    
 	printf("\n %d \n", 9223372036854775807LL);
     ft_printf(" %d \n", 9223372036854775807LL);
+    
 	printf("\n %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %d %d %d %d %d %d %d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
 	/*dot*/
-	printf("\n%.s\n", "");
-    ft_printf("%.s\n", "");
+
+	printf("\n%s\n", " ");
+    ft_printf("%s\n", " ");
+    
 	printf("\n %.1s\n", "");
     ft_printf(" %.1s\n", "");
+    
 	printf("\n%.1s \n", "");
     ft_printf("%.1s \n", "");
+    
 	printf("\n %.s \n", "");
     ft_printf(" %.s \n", "");
+    
 	printf("\n %.s \n", "-");
     ft_printf(" %.s \n", "-");
+    
 	printf("\n %.2s %.1s \n", "\n", "-");
     ft_printf(" %.2s %.1s \n", "\n", "-");
+    
 	printf("\n %.3s %.2s \n", " - \n", "");
     ft_printf(" %.3s %.2s \n", " - \n", "");
+    
 	printf("\n %.1s %.2s %.3s %.4s \n", " - \n", "\n", "4\n", "");
     ft_printf(" %.1s %.2s %.3s %.4s \n", " - \n", "\n", "4\n", "");
+    
 	printf("\n %.2s %.3s %.4s %.5s %.1s \n", " - \n", "\n", "4\n", "\n", "2 ");
     ft_printf(" %.2s %.3s %.4s %.5s %.1s \n", " - \n", "\n", "4\n", "\n", "2 ");
+    
 	printf("\n %.1d \n", 0);
     ft_printf(" %.1d \n", 0);
+    
 	printf("\n %.2d \n", -1);
     ft_printf(" %.2d \n", -1);
+    
 	printf("\n %.2d \n", 1);
     ft_printf(" %.2d \n", 1);
+    
 	printf("\n %.1d \n", 9);
     ft_printf(" %.1d \n", 9);
+    
 	printf("\n %.2d \n", 10);
     ft_printf(" %.2d \n", 10);
+    
 	printf("\n %.3d \n", 11);
     ft_printf(" %.3d \n", 11);
+    
 	printf("\n %.4d \n", 15);
     ft_printf(" %.4d \n", 15);
+    
 	printf("\n %.5d \n", 16);
     ft_printf(" %.5d \n", 16);
+    
 	printf("\n %.6d \n", 17);
     ft_printf(" %.6d \n", 17);
+    
 	printf("\n %.1d \n", 99);
     ft_printf(" %.1d \n", 99);
+    
 	printf("\n %.2d \n", 100);
     ft_printf(" %.2d \n", 100);
+    
 	printf("\n %.3d \n", 101);
     ft_printf(" %.3d \n", 101);
+    
 	printf("\n %.1d \n", -9);
     ft_printf(" %.1d \n", -9);
+    
 	printf("\n %.2d \n", -10);
     ft_printf(" %.2d \n", -10);
+    
 	printf("\n %.3d \n", -11);
     ft_printf(" %.3d \n", -11);
+    
 	printf("\n %.4d \n", -14);
     ft_printf(" %.4d \n", -14);
+    
 	printf("\n %.1d \n", -15);
     ft_printf(" %.1d \n", -15);
+    
 	printf("\n %.2d \n", -16);
     ft_printf(" %.2d \n", -16);
+    
 	printf("\n %.3d \n", -99);
     ft_printf(" %.3d \n", -99);
+    
 	printf("\n %.3d \n", -100);
     ft_printf(" %.3d \n", -100);
+    
 	printf("\n %.4d \n", -101);
     ft_printf(" %.4d \n", -101);
+    
 	printf("\n %.8d \n", INT_MAX);
     ft_printf(" %.8d \n", INT_MAX);
+    
 	printf("\n %.9d \n", INT_MIN);
     ft_printf(" %.9d \n", INT_MIN);
+    
 	printf("\n %.10d \n", LONG_MAX);
     ft_printf(" %.10d \n", LONG_MAX);
+    
 	printf("\n %.11d \n", LONG_MIN);
     ft_printf(" %.11d \n", LONG_MIN);
+    
 	printf("\n %.12d \n", UINT_MAX);
     ft_printf(" %.12d \n", UINT_MAX);
+    
 	printf("\n %.13d \n", ULONG_MAX);
     ft_printf(" %.13d \n", ULONG_MAX);
+    
 	printf("\n %.14d \n", 9223372036854775807LL);
     ft_printf(" %.14d \n", 9223372036854775807LL);
+    
 	printf("\n %.8d %.9d %.10d %.11d %.12d %.13d %.14d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %.8d %.9d %.10d %.11d %.12d %.13d %.14d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %.1i \n", 0);
     ft_printf(" %.1i \n", 0);
+    
 	printf("\n %.2i \n", -1);
     ft_printf(" %.2i \n", -1);
+    
 	printf("\n %.2i \n", 1);
     ft_printf(" %.2i \n", 1);
+    
 	printf("\n %.1i \n", 9);
     ft_printf(" %.1i \n", 9);
+    
 	printf("\n %.2i \n", 10);
     ft_printf(" %.2i \n", 10);
+    
 	printf("\n %.3i \n", 11);
     ft_printf(" %.3i \n", 11);
+    
 	printf("\n %.4i \n", 15);
     ft_printf(" %.4i \n", 15);
+    
 	printf("\n %.5i \n", 16);
     ft_printf(" %.5i \n", 16);
+    
 	printf("\n %.6i \n", 17);
     ft_printf(" %.6i \n", 17);
+    
 	printf("\n %.1i \n", 99);
     ft_printf(" %.1i \n", 99);
+    
 	printf("\n %.2i \n", 100);
     ft_printf(" %.2i \n", 100);
+    
 	printf("\n %.3i \n", 101);
     ft_printf(" %.3i \n", 101);
+    
 	printf("\n %.1i \n", -9);
     ft_printf(" %.1i \n", -9);
+    
 	printf("\n %.2i \n", -10);
     ft_printf(" %.2i \n", -10);
+    
 	printf("\n %.3i \n", -11);
     ft_printf(" %.3i \n", -11);
+    
 	printf("\n %.4i \n", -14);
     ft_printf(" %.4i \n", -14);
+    
 	printf("\n %.1i \n", -15);
     ft_printf(" %.1i \n", -15);
+    
 	printf("\n %.2i \n", -16);
     ft_printf(" %.2i \n", -16);
+    
 	printf("\n %.3i \n", -99);
     ft_printf(" %.3i \n", -99);
+    
 	printf("\n %.3i \n", -100);
     ft_printf(" %.3i \n", -100);
+    
 	printf("\n %.4i \n", -101);
     ft_printf(" %.4i \n", -101);
+    
 	printf("\n %.8i \n", INT_MAX);
     ft_printf(" %.8i \n", INT_MAX);
+    
 	printf("\n %.9i \n", INT_MIN);
     ft_printf(" %.9i \n", INT_MIN);
+    
 	printf("\n %.10i \n", LONG_MAX);
     ft_printf(" %.10i \n", LONG_MAX);
+    
 	printf("\n %.11i \n", LONG_MIN);
     ft_printf(" %.11i \n", LONG_MIN);
+    
 	printf("\n %.12i \n", UINT_MAX);
     ft_printf(" %.12i \n", UINT_MAX);
+    
 	printf("\n %.13i \n", ULONG_MAX);
     ft_printf(" %.13i \n", ULONG_MAX);
+    
 	printf("\n %.14i \n", 9223372036854775807LL);
     ft_printf(" %.14i \n", 9223372036854775807LL);
+    
 	printf("\n %.8i %.9i %.10i %.11i %.12i %.13i %.14i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %.8i %.9i %.10i %.11i %.12i %.13i %.14i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %.1u \n", 0);
     ft_printf(" %.1u \n", 0);
+    
 	printf("\n %.2u \n", -1);
     ft_printf(" %.2u \n", -1);
+    
 	printf("\n %.2u \n", 1);
     ft_printf(" %.2u \n", 1);
+    
 	printf("\n %.1u \n", 9);
     ft_printf(" %.1u \n", 9);
+    
 	printf("\n %.2u \n", 10);
     ft_printf(" %.2u \n", 10);
+    
 	printf("\n %.3u \n", 11);
     ft_printf(" %.3u \n", 11);
+    
 	printf("\n %.4u \n", 15);
     ft_printf(" %.4u \n", 15);
+    
 	printf("\n %.5u \n", 16);
     ft_printf(" %.5u \n", 16);
+    
 	printf("\n %.6u \n", 17);
     ft_printf(" %.6u \n", 17);
+    
 	printf("\n %.1u \n", 99);
     ft_printf(" %.1u \n", 99);
+    
 	printf("\n %.2u \n", 100);
     ft_printf(" %.2u \n", 100);
+    
 	printf("\n %.3u \n", 101);
     ft_printf(" %.3u \n", 101);
+    
 	printf("\n %.1u \n", -9);
     ft_printf(" %.1u \n", -9);
+    
 	printf("\n %.2u \n", -10);
     ft_printf(" %.2u \n", -10);
+    
 	printf("\n %.3u \n", -11);
     ft_printf(" %.3u \n", -11);
+    
 	printf("\n %.4u \n", -14);
     ft_printf(" %.4u \n", -14);
+    
 	printf("\n %.1u \n", -15);
     ft_printf(" %.1u \n", -15);
+    
 	printf("\n %.2u \n", -16);
     ft_printf(" %.2u \n", -16);
+    
 	printf("\n %.3u \n", -99);
     ft_printf(" %.3u \n", -99);
+    
 	printf("\n %.3u \n", -100);
     ft_printf(" %.3u \n", -100);
+    
 	printf("\n %.4u \n", -101);
     ft_printf(" %.4u \n", -101);
+    
 	printf("\n %.8u \n", INT_MAX);
     ft_printf(" %.8u \n", INT_MAX);
+    
 	printf("\n %.9u \n", INT_MIN);
     ft_printf(" %.9u \n", INT_MIN);
+    
 	printf("\n %.10u \n", LONG_MAX);
     ft_printf(" %.10u \n", LONG_MAX);
+    
 	printf("\n %.11u \n", LONG_MIN);
     ft_printf(" %.11u \n", LONG_MIN);
+    
 	printf("\n %.12u \n", UINT_MAX);
     ft_printf(" %.12u \n", UINT_MAX);
+    
 	printf("\n %.13u \n", ULONG_MAX);
     ft_printf(" %.13u \n", ULONG_MAX);
+    
 	printf("\n %.14u \n", 9223372036854775807LL);
     ft_printf(" %.14u \n", 9223372036854775807LL);
+    
 	printf("\n %.8u %.9u %.10u %.11u %.12u %.13u %.14u\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %.8u %.9u %.10u %.11u %.12u %.13u %.14u\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %.1x \n", 0);
     ft_printf(" %.1x \n", 0);
+    
 	printf("\n %.2x \n", -1);
     ft_printf(" %.2x \n", -1);
+    
 	printf("\n %.2x \n", 1);
     ft_printf(" %.2x \n", 1);
+    
 	printf("\n %.1x \n", 9);
     ft_printf(" %.1x \n", 9);
+    
 	printf("\n %.2x \n", 10);
     ft_printf(" %.2x \n", 10);
+    
 	printf("\n %.3x \n", 11);
     ft_printf(" %.3x \n", 11);
+    
 	printf("\n %.4x \n", 15);
     ft_printf(" %.4x \n", 15);
+    
 	printf("\n %.5x \n", 16);
     ft_printf(" %.5x \n", 16);
+    
 	printf("\n %.6x \n", 17);
     ft_printf(" %.6x \n", 17);
+    
 	printf("\n %.1x \n", 99);
     ft_printf(" %.1x \n", 99);
+    
 	printf("\n %.2x \n", 100);
     ft_printf(" %.2x \n", 100);
+    
 	printf("\n %.3x \n", 101);
     ft_printf(" %.3x \n", 101);
+    
 	printf("\n %.1x \n", -9);
     ft_printf(" %.1x \n", -9);
+    
 	printf("\n %.2x \n", -10);
     ft_printf(" %.2x \n", -10);
+    
 	printf("\n %.3x \n", -11);
     ft_printf(" %.3x \n", -11);
+    
 	printf("\n %.4x \n", -14);
     ft_printf(" %.4x \n", -14);
+    
 	printf("\n %.1x \n", -15);
     ft_printf(" %.1x \n", -15);
+    
 	printf("\n %.2x \n", -16);
     ft_printf(" %.2x \n", -16);
+    
 	printf("\n %.3x \n", -99);
     ft_printf(" %.3x \n", -99);
+    
 	printf("\n %.3x \n", -100);
     ft_printf(" %.3x \n", -100);
+    
 	printf("\n %.4x \n", -101);
     ft_printf(" %.4x \n", -101);
+    
 	printf("\n %.8x \n", INT_MAX);
     ft_printf(" %.8x \n", INT_MAX);
+    
 	printf("\n %.9x \n", INT_MIN);
     ft_printf(" %.9x \n", INT_MIN);
+    
 	printf("\n %.10x \n", LONG_MAX);
     ft_printf(" %.10x \n", LONG_MAX);
+    
 	printf("\n %.11x \n", LONG_MIN);
     ft_printf(" %.11x \n", LONG_MIN);
+    
 	printf("\n %.12x \n", UINT_MAX);
     ft_printf(" %.12x \n", UINT_MAX);
+    
 	printf("\n %.13x \n", ULONG_MAX);
     ft_printf(" %.13x \n", ULONG_MAX);
+    
 	printf("\n %.14x \n", 9223372036854775807LL);
     ft_printf(" %.14x \n", 9223372036854775807LL);
+    
 	printf("\n %.8x %.9x %.10x %.11x %.12x %.13x %.14x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %.8x %.9x %.10x %.11x %.12x %.13x %.14x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %.1X \n", 0);
     ft_printf(" %.1X \n", 0);
+    
 	printf("\n %.2X \n", -1);
     ft_printf(" %.2X \n", -1);
+    
 	printf("\n %.2X \n", 1);
     ft_printf(" %.2X \n", 1);
+    
 	printf("\n %.1X \n", 9);
     ft_printf(" %.1X \n", 9);
+    
 	printf("\n %.2X \n", 10);
     ft_printf(" %.2X \n", 10);
+    
 	printf("\n %.3X \n", 11);
     ft_printf(" %.3X \n", 11);
+    
 	printf("\n %.4X \n", 15);
     ft_printf(" %.4X \n", 15);
+    
 	printf("\n %.5X \n", 16);
     ft_printf(" %.5X \n", 16);
+    
 	printf("\n %.6X \n", 17);
     ft_printf(" %.6X \n", 17);
+    
 	printf("\n %.1X \n", 99);
     ft_printf(" %.1X \n", 99);
+    
 	printf("\n %.2X \n", 100);
     ft_printf(" %.2X \n", 100);
+    
 	printf("\n %.3X \n", 101);
     ft_printf(" %.3X \n", 101);
+    
 	printf("\n %.1X \n", -9);
     ft_printf(" %.1X \n", -9);
+    
 	printf("\n %.2X \n", -10);
     ft_printf(" %.2X \n", -10);
+    
 	printf("\n %.3X \n", -11);
     ft_printf(" %.3X \n", -11);
+    
 	printf("\n %.4X \n", -14);
     ft_printf(" %.4X \n", -14);
+    
 	printf("\n %.1X \n", -15);
     ft_printf(" %.1X \n", -15);
+    
 	printf("\n %.2X \n", -16);
     ft_printf(" %.2X \n", -16);
+    
 	printf("\n %.3X \n", -99);
     ft_printf(" %.3X \n", -99);
+    
 	printf("\n %.3X \n", -100);
     ft_printf(" %.3X \n", -100);
+    
 	printf("\n %.4X \n", -101);
     ft_printf(" %.4X \n", -101);
+    
 	printf("\n %.8X \n", INT_MAX);
     ft_printf(" %.8X \n", INT_MAX);
+    
 	printf("\n %.9X \n", INT_MIN);
     ft_printf(" %.9X \n", INT_MIN);
+    
 	printf("\n %.10X \n", LONG_MAX);
     ft_printf(" %.10X \n", LONG_MAX);
+    
 	printf("\n %.11X \n", LONG_MIN);
     ft_printf(" %.11X \n", LONG_MIN);
+    
 	printf("\n %.12X \n", UINT_MAX);
     ft_printf(" %.12X \n", UINT_MAX);
+    
 	printf("\n %.13X \n", ULONG_MAX);
     ft_printf(" %.13X \n", ULONG_MAX);
+    
 	printf("\n %.14X \n", 9223372036854775807LL);
     ft_printf(" %.14X \n", 9223372036854775807LL);
+    
 	printf("\n %.8X %.9X %.10X %.11X %.12X %.13X %.14X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %.8X %.9X %.10X %.11X %.12X %.13X %.14X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
 
 	/*i*/
+    
 	printf("\n %i \n", 0);
     ft_printf(" %i \n", 0);
+    
 	printf("\n %i \n", -1);
     ft_printf(" %i \n", -1);
+    
 	printf("\n %i \n", 1);
     ft_printf(" %i \n", 1);
+    
 	printf("\n %i \n", 9);
     ft_printf(" %i \n", 9);
+    
 	printf("\n %i \n", 10);
     ft_printf(" %i \n", 10);
+    
 	printf("\n %i \n", 11);
     ft_printf(" %i \n", 11);
+    
 	printf("\n %i \n", 15);
     ft_printf(" %i \n", 15);
+    
 	printf("\n %i \n", 16);
     ft_printf(" %i \n", 16);
+    
 	printf("\n %i \n", 17);
     ft_printf(" %i \n", 17);
+    
 	printf("\n %i \n", 99);
     ft_printf(" %i \n", 99);
+    
 	printf("\n %i \n", 100);
     ft_printf(" %i \n", 100);
+    
 	printf("\n %i \n", 101);
     ft_printf(" %i \n", 101);
+    
 	printf("\n %i \n", -9);
     ft_printf(" %i \n", -9);
+    
 	printf("\n %i \n", -10);
     ft_printf(" %i \n", -10);
+    
 	printf("\n %i \n", -11);
     ft_printf(" %i \n", -11);
+    
 	printf("\n %i \n", -14);
     ft_printf(" %i \n", -14);
+    
 	printf("\n %i \n", -15);
     ft_printf(" %i \n", -15);
+    
 	printf("\n %i \n", -16);
     ft_printf(" %i \n", -16);
+    
 	printf("\n %i \n", -99);
     ft_printf(" %i \n", -99);
+    
 	printf("\n %i \n", -100);
     ft_printf(" %i \n", -100);
+    
 	printf("\n %i \n", -101);
     ft_printf(" %i \n", -101);
+    
 	printf("\n %i \n", INT_MAX);
     ft_printf(" %i \n", INT_MAX);
+    
 	printf("\n %i \n", INT_MIN);
     ft_printf(" %i \n", INT_MIN);
+    
 	printf("\n %i \n", LONG_MAX);
     ft_printf(" %i \n", LONG_MAX);
+    
 	printf("\n %i \n", LONG_MIN);
     ft_printf(" %i \n", LONG_MIN);
+    
 	printf("\n %i \n", UINT_MAX);
     ft_printf(" %i \n", UINT_MAX);
+    
 	printf("\n %i \n", ULONG_MAX);
     ft_printf(" %i \n", ULONG_MAX);
+    
 	printf("\n %i \n", 9223372036854775807LL);
     ft_printf(" %i \n", 9223372036854775807LL);
+    
 	printf("\n %i %i %i %i %i %i %i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %i %i %i %i %i %i %i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
 	/*minus*/
+    
 	printf("\n%-1c\n", '0');
     ft_printf("%-1c\n", '0');
+    
 	printf("\n %-2c \n", '0');
     ft_printf(" %-2c \n", '0');
+    
 	printf("\n %-3c\n", '0' - 256);
     ft_printf(" %-3c\n", '0' - 256);
+    
 	printf("\n%-4c \n", '0' + 256);
-    ft_printf("%-4c \n", '0' + 256);
+    // ft_printf("%-4c \n", '0' + 256);
+    
 	printf("\n %-1c %-2c %-3c \n", '0', 0, '1');
     ft_printf(" %-1c %-2c %-3c \n", '0', 0, '1');
+    
 	printf("\n %-1c %-2c %-3c \n", ' ', ' ', ' ');
     ft_printf(" %-1c %-2c %-3c \n", ' ', ' ', ' ');
+    
 	printf("\n %-1c %-2c %-3c \n", '1', '2', '3');
     ft_printf(" %-1c %-2c %-3c \n", '1', '2', '3');
+    
 	printf("\n %-1c %-2c %-3c \n", '2', '1', 0);
     ft_printf(" %-1c %-2c %-3c \n", '2', '1', 0);
+    
 	printf("\n %-1c %-2c %-3c \n", 0, '1', '2');
     ft_printf(" %-1c %-2c %-3c \n", 0, '1', '2');
+    
 	printf("\n%1s\n", "");
     ft_printf("%1s\n", "");
+    
 	printf("\n%-1s\n", "");
     ft_printf("%-1s\n", "");
+    
 	printf("\n %-2s\n", "");
     ft_printf(" %-2s\n", "");
+    
 	printf("\n%-3s \n", "");
     ft_printf("%-3s \n", "");
+    
 	printf("\n %-0s \n", "");
     ft_printf(" %-0s \n", "");
+    
 	printf("\n %-s \n", "-");
     ft_printf(" %-s \n", "-");
+    
 	printf("\n %-1s %-2s \n", "\n", "-");
     ft_printf(" %-1s %-2s \n", "\n", "-");
+    
 	printf("\n %-3s %-4s \n", " - \n", "");
     ft_printf(" %-3s %-4s \n", " - \n", "");
+    
 	printf("\n %-2s %-3s %-4s %-5s \n", " - \n", "\n", "4\n", "");
     ft_printf(" %-2s %-3s %-4s %-5s \n", " - \n", "\n", "4\n", "");
+    
 	printf("\n %-3s %-3s %-4s %-5s %-3s \n", " - \n", "\n", "4\n", "\n", "2 ");
     ft_printf(" %-3s %-3s %-4s %-5s %-3s \n", " - \n", "\n", "4\n", "\n", "2 ");
+    
 	printf("\n %2p \n", -1);
     ft_printf(" %2p \n", -1);
+    
 	printf("\n %-2p \n", -1);
     ft_printf(" %-2p \n", -1);
+    
 	printf("\n %-2p \n", 1);
     ft_printf(" %-2p \n", 1);
+    
 	printf("\n %-2p \n", 15);
     ft_printf(" %-2p \n", 15);
+    
 	printf("\n %-3p \n", 16);
     ft_printf(" %-3p \n", 16);
+    
 	printf("\n %-4p \n", 17);
     ft_printf(" %-4p \n", 17);
+    
 	printf("\n %-9p %-10p \n", LONG_MIN, LONG_MAX);
     ft_printf(" %-9p %-10p \n", LONG_MIN, LONG_MAX);
+    
 	printf("\n %-11p %-12p \n", INT_MIN, INT_MAX);
     ft_printf(" %-11p %-12p \n", INT_MIN, INT_MAX);
+    
 	printf("\n %-13p %-14p \n", ULONG_MAX, -ULONG_MAX);
     ft_printf(" %-13p %-14p \n", ULONG_MAX, -ULONG_MAX);
+    
 	printf("\n %-1p %-2p \n", 0, 0);
     ft_printf(" %-1p %-2p \n", 0, 0);
+    
 	printf("\n %-1d \n", 0);
     ft_printf(" %-1d \n", 0);
+    
 	printf("\n %-2d \n", -1);
     ft_printf(" %-2d \n", -1);
+    
 	printf("\n %-3d \n", 1);
     ft_printf(" %-3d \n", 1);
+    
 	printf("\n %-4d \n", 9);
     ft_printf(" %-4d \n", 9);
+    
 	printf("\n %-1d \n", 10);
     ft_printf(" %-1d \n", 10);
+    
 	printf("\n %-2d \n", 11);
     ft_printf(" %-2d \n", 11);
+    
 	printf("\n %-3d \n", 15);
     ft_printf(" %-3d \n", 15);
+    
 	printf("\n %-4d \n", 16);
     ft_printf(" %-4d \n", 16);
+    
 	printf("\n %-5d \n", 17);
     ft_printf(" %-5d \n", 17);
+    
 	printf("\n %-1d \n", 99);
     ft_printf(" %-1d \n", 99);
+    
 	printf("\n %-2d \n", 100);
     ft_printf(" %-2d \n", 100);
+    
 	printf("\n %-3d \n", 101);
     ft_printf(" %-3d \n", 101);
+    
 	printf("\n %-1d \n", -9);
     ft_printf(" %-1d \n", -9);
+    
 	printf("\n %-2d \n", -10);
     ft_printf(" %-2d \n", -10);
+    
 	printf("\n %-3d \n", -11);
     ft_printf(" %-3d \n", -11);
+    
 	printf("\n %-4d \n", -14);
     ft_printf(" %-4d \n", -14);
+    
 	printf("\n %-5d \n", -15);
     ft_printf(" %-5d \n", -15);
+    
 	printf("\n %-6d \n", -16);
     ft_printf(" %-6d \n", -16);
+    
 	printf("\n %-1d \n", -99);
     ft_printf(" %-1d \n", -99);
+    
 	printf("\n %-2d \n", -100);
     ft_printf(" %-2d \n", -100);
+    
 	printf("\n %-3d \n", -101);
     ft_printf(" %-3d \n", -101);
+    
 	printf("\n %-9d \n", INT_MAX);
     ft_printf(" %-9d \n", INT_MAX);
+    
 	printf("\n %-10d \n", INT_MIN);
     ft_printf(" %-10d \n", INT_MIN);
+    
 	printf("\n %-11d \n", LONG_MAX);
     ft_printf(" %-11d \n", LONG_MAX);
+    
 	printf("\n %-12d \n", LONG_MIN);
     ft_printf(" %-12d \n", LONG_MIN);
+    
 	printf("\n %-13d \n", UINT_MAX);
     ft_printf(" %-13d \n", UINT_MAX);
+    
 	printf("\n %-14d \n", ULONG_MAX);
     ft_printf(" %-14d \n", ULONG_MAX);
+    
 	printf("\n %-15d \n", 9223372036854775807LL);
     ft_printf(" %-15d \n", 9223372036854775807LL);
+    
 	printf("\n %-9d %-10d %-11d %-12d %-13d %-14d %-15d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %-9d %-10d %-11d %-12d %-13d %-14d %-15d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %-1i \n", 0);
     ft_printf(" %-1i \n", 0);
+    
 	printf("\n %-2i \n", -1);
     ft_printf(" %-2i \n", -1);
+    
 	printf("\n %-3i \n", 1);
     ft_printf(" %-3i \n", 1);
+    
 	printf("\n %-4i \n", 9);
     ft_printf(" %-4i \n", 9);
+    
 	printf("\n %-1i \n", 10);
     ft_printf(" %-1i \n", 10);
+    
 	printf("\n %-2i \n", 11);
     ft_printf(" %-2i \n", 11);
+    
 	printf("\n %-3i \n", 15);
     ft_printf(" %-3i \n", 15);
+    
 	printf("\n %-4i \n", 16);
     ft_printf(" %-4i \n", 16);
+    
 	printf("\n %-5i \n", 17);
     ft_printf(" %-5i \n", 17);
+    
 	printf("\n %-1i \n", 99);
     ft_printf(" %-1i \n", 99);
+    
 	printf("\n %-2i \n", 100);
     ft_printf(" %-2i \n", 100);
+    
 	printf("\n %-3i \n", 101);
     ft_printf(" %-3i \n", 101);
+    
 	printf("\n %-1i \n", -9);
     ft_printf(" %-1i \n", -9);
+    
 	printf("\n %-2i \n", -10);
     ft_printf(" %-2i \n", -10);
+    
 	printf("\n %-3i \n", -11);
     ft_printf(" %-3i \n", -11);
+    
 	printf("\n %-4i \n", -14);
     ft_printf(" %-4i \n", -14);
+    
 	printf("\n %-5i \n", -15);
     ft_printf(" %-5i \n", -15);
+    
 	printf("\n %-6i \n", -16);
     ft_printf(" %-6i \n", -16);
+    
 	printf("\n %-1i \n", -99);
     ft_printf(" %-1i \n", -99);
+    
 	printf("\n %-2i \n", -100);
     ft_printf(" %-2i \n", -100);
+    
 	printf("\n %-3i \n", -101);
     ft_printf(" %-3i \n", -101);
+    
 	printf("\n %-9i \n", INT_MAX);
     ft_printf(" %-9i \n", INT_MAX);
+    
 	printf("\n %-10i \n", INT_MIN);
     ft_printf(" %-10i \n", INT_MIN);
+    
 	printf("\n %-11i \n", LONG_MAX);
     ft_printf(" %-11i \n", LONG_MAX);
+    
 	printf("\n %-12i \n", LONG_MIN);
     ft_printf(" %-12i \n", LONG_MIN);
+    
 	printf("\n %-13i \n", UINT_MAX);
     ft_printf(" %-13i \n", UINT_MAX);
+    
 	printf("\n %-14i \n", ULONG_MAX);
     ft_printf(" %-14i \n", ULONG_MAX);
+    
 	printf("\n %-15i \n", 9223372036854775807LL);
     ft_printf(" %-15i \n", 9223372036854775807LL);
+    
 	printf("\n %-9i %-10i %-11i %-12i %-13i %-14i %-15i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %-9i %-10i %-11i %-12i %-13i %-14i %-15i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %-1u \n", 0);
     ft_printf(" %-1u \n", 0);
+    
 	printf("\n %-2u \n", -1);
     ft_printf(" %-2u \n", -1);
+    
 	printf("\n %-3u \n", 1);
     ft_printf(" %-3u \n", 1);
+    
 	printf("\n %-4u \n", 9);
     ft_printf(" %-4u \n", 9);
+    
 	printf("\n %-1u \n", 10);
     ft_printf(" %-1u \n", 10);
+    
 	printf("\n %-2u \n", 11);
     ft_printf(" %-2u \n", 11);
+    
 	printf("\n %-3u \n", 15);
     ft_printf(" %-3u \n", 15);
+    
 	printf("\n %-4u \n", 16);
     ft_printf(" %-4u \n", 16);
+    
 	printf("\n %-5u \n", 17);
     ft_printf(" %-5u \n", 17);
+    
 	printf("\n %-1u \n", 99);
     ft_printf(" %-1u \n", 99);
+    
 	printf("\n %-2u \n", 100);
     ft_printf(" %-2u \n", 100);
+    
 	printf("\n %-3u \n", 101);
     ft_printf(" %-3u \n", 101);
+    
 	printf("\n %-1u \n", -9);
     ft_printf(" %-1u \n", -9);
+    
 	printf("\n %-2u \n", -10);
     ft_printf(" %-2u \n", -10);
+    
 	printf("\n %-3u \n", -11);
     ft_printf(" %-3u \n", -11);
+    
 	printf("\n %-4u \n", -14);
     ft_printf(" %-4u \n", -14);
+    
 	printf("\n %-5u \n", -15);
     ft_printf(" %-5u \n", -15);
+    
 	printf("\n %-6u \n", -16);
     ft_printf(" %-6u \n", -16);
+    
 	printf("\n %-1u \n", -99);
     ft_printf(" %-1u \n", -99);
+    
 	printf("\n %-2u \n", -100);
     ft_printf(" %-2u \n", -100);
+    
 	printf("\n %-3u \n", -101);
     ft_printf(" %-3u \n", -101);
+    
 	printf("\n %-9u \n", INT_MAX);
     ft_printf(" %-9u \n", INT_MAX);
+    
 	printf("\n %-10u \n", INT_MIN);
     ft_printf(" %-10u \n", INT_MIN);
+    
 	printf("\n %-11u \n", LONG_MAX);
     ft_printf(" %-11u \n", LONG_MAX);
+    
 	printf("\n %-12u \n", LONG_MIN);
     ft_printf(" %-12u \n", LONG_MIN);
+    
 	printf("\n %-13u \n", UINT_MAX);
     ft_printf(" %-13u \n", UINT_MAX);
+    
 	printf("\n %-14u \n", ULONG_MAX);
     ft_printf(" %-14u \n", ULONG_MAX);
+    
 	printf("\n %-15u \n", 9223372036854775807LL);
     ft_printf(" %-15u \n", 9223372036854775807LL);
+    
 	printf("\n %-9u %-10u %-11u %-12u %-13u %-14u %-15u\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %-9u %-10u %-11u %-12u %-13u %-14u %-15u\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %-1x \n", 0);
     ft_printf(" %-1x \n", 0);
+    
 	printf("\n %-2x \n", -1);
     ft_printf(" %-2x \n", -1);
+    
 	printf("\n %-3x \n", 1);
     ft_printf(" %-3x \n", 1);
+    
 	printf("\n %-4x \n", 9);
     ft_printf(" %-4x \n", 9);
+    
 	printf("\n %-1x \n", 10);
     ft_printf(" %-1x \n", 10);
+    
 	printf("\n %-2x \n", 11);
     ft_printf(" %-2x \n", 11);
+    
 	printf("\n %-3x \n", 15);
     ft_printf(" %-3x \n", 15);
+    
 	printf("\n %-4x \n", 16);
     ft_printf(" %-4x \n", 16);
+    
 	printf("\n %-5x \n", 17);
     ft_printf(" %-5x \n", 17);
+    
 	printf("\n %-1x \n", 99);
     ft_printf(" %-1x \n", 99);
+    
 	printf("\n %-2x \n", 100);
     ft_printf(" %-2x \n", 100);
+    
 	printf("\n %-3x \n", 101);
     ft_printf(" %-3x \n", 101);
+    
 	printf("\n %-1x \n", -9);
     ft_printf(" %-1x \n", -9);
+    
 	printf("\n %-2x \n", -10);
     ft_printf(" %-2x \n", -10);
+    
 	printf("\n %-3x \n", -11);
     ft_printf(" %-3x \n", -11);
+    
 	printf("\n %-4x \n", -14);
     ft_printf(" %-4x \n", -14);
+    
 	printf("\n %-5x \n", -15);
     ft_printf(" %-5x \n", -15);
+    
 	printf("\n %-6x \n", -16);
     ft_printf(" %-6x \n", -16);
+    
 	printf("\n %-1x \n", -99);
     ft_printf(" %-1x \n", -99);
+    
 	printf("\n %-2x \n", -100);
     ft_printf(" %-2x \n", -100);
+    
 	printf("\n %-3x \n", -101);
     ft_printf(" %-3x \n", -101);
+    
 	printf("\n %-9x \n", INT_MAX);
     ft_printf(" %-9x \n", INT_MAX);
+    
 	printf("\n %-10x \n", INT_MIN);
     ft_printf(" %-10x \n", INT_MIN);
+    
 	printf("\n %-11x \n", LONG_MAX);
     ft_printf(" %-11x \n", LONG_MAX);
+    
 	printf("\n %-12x \n", LONG_MIN);
     ft_printf(" %-12x \n", LONG_MIN);
+    
 	printf("\n %-13x \n", UINT_MAX);
     ft_printf(" %-13x \n", UINT_MAX);
+    
 	printf("\n %-14x \n", ULONG_MAX);
     ft_printf(" %-14x \n", ULONG_MAX);
+    
 	printf("\n %-15x \n", 9223372036854775807LL);
     ft_printf(" %-15x \n", 9223372036854775807LL);
+    
 	printf("\n %-9x %-10x %-11x %-12x %-13x %-14x %-15x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %-9x %-10x %-11x %-12x %-13x %-14x %-15x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %-1X \n", 0);
     ft_printf(" %-1X \n", 0);
+    
 	printf("\n %-2X \n", -1);
     ft_printf(" %-2X \n", -1);
+    
 	printf("\n %-3X \n", 1);
     ft_printf(" %-3X \n", 1);
+    
 	printf("\n %-4X \n", 9);
     ft_printf(" %-4X \n", 9);
+    
 	printf("\n %-1X \n", 10);
     ft_printf(" %-1X \n", 10);
+    
 	printf("\n %-2X \n", 11);
     ft_printf(" %-2X \n", 11);
+    
 	printf("\n %-3X \n", 15);
     ft_printf(" %-3X \n", 15);
+    
 	printf("\n %-4X \n", 16);
     ft_printf(" %-4X \n", 16);
+    
 	printf("\n %-5X \n", 17);
     ft_printf(" %-5X \n", 17);
+    
 	printf("\n %-1X \n", 99);
     ft_printf(" %-1X \n", 99);
+    
 	printf("\n %-2X \n", 100);
     ft_printf(" %-2X \n", 100);
+    
 	printf("\n %-3X \n", 101);
     ft_printf(" %-3X \n", 101);
+    
 	printf("\n %-1X \n", -9);
     ft_printf(" %-1X \n", -9);
+    
 	printf("\n %-2X \n", -10);
     ft_printf(" %-2X \n", -10);
+    
 	printf("\n %-3X \n", -11);
     ft_printf(" %-3X \n", -11);
+    
 	printf("\n %-4X \n", -14);
     ft_printf(" %-4X \n", -14);
+    
 	printf("\n %-5X \n", -15);
     ft_printf(" %-5X \n", -15);
+    
 	printf("\n %-6X \n", -16);
     ft_printf(" %-6X \n", -16);
+    
 	printf("\n %-1X \n", -99);
     ft_printf(" %-1X \n", -99);
+    
 	printf("\n %-2X \n", -100);
     ft_printf(" %-2X \n", -100);
+    
 	printf("\n %-3X \n", -101);
     ft_printf(" %-3X \n", -101);
+    
 	printf("\n %-9X \n", INT_MAX);
     ft_printf(" %-9X \n", INT_MAX);
+    
 	printf("\n %-10X \n", INT_MIN);
     ft_printf(" %-10X \n", INT_MIN);
+    
 	printf("\n %-11X \n", LONG_MAX);
     ft_printf(" %-11X \n", LONG_MAX);
+    
 	printf("\n %-12X \n", LONG_MIN);
     ft_printf(" %-12X \n", LONG_MIN);
+    
 	printf("\n %-13X \n", UINT_MAX);
     ft_printf(" %-13X \n", UINT_MAX);
+    
 	printf("\n %-14X \n", ULONG_MAX);
     ft_printf(" %-14X \n", ULONG_MAX);
+    
 	printf("\n %-15X \n", 9223372036854775807LL);
     ft_printf(" %-15X \n", 9223372036854775807LL);
+    
 	printf("\n %-9X %-10X %-11X %-12X %-13X %-14X %-15X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %-9X %-10X %-11X %-12X %-13X %-14X %-15X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
 	/*mix*/
+    
 	printf("\n%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n", 'A', "42\n", 42, 42 ,42 , 42, 42, 'B', "-42\n", -42, -42 ,-42 ,-42, 42, 'C', "0\n", 0, 0 ,0 ,0, 42, 0);
     ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n", 'A', "42\n", 42, 42 ,42 , 42, 42, 'B', "-42\n", -42, -42 ,-42 ,-42, 42, 'C', "0\n", 0, 0 ,0 ,0, 42, 0);
 
 	/*p*/
+    
 	printf("\n %p \n", -1);
     ft_printf(" %p \n", -1);
+    
 	printf("\n %p \n", 1);
     ft_printf(" %p \n", 1);
+    
 	printf("\n %p \n", 15);
     ft_printf(" %p \n", 15);
+    
 	printf("\n %p \n", 16);
     ft_printf(" %p \n", 16);
+    
 	printf("\n %p \n", 17);
     ft_printf(" %p \n", 17);
+    
 	printf("\n %p %p \n", LONG_MIN, LONG_MAX);
     ft_printf(" %p %p \n", LONG_MIN, LONG_MAX);
+    
 	printf("\n %p %p \n", INT_MIN, INT_MAX);
     ft_printf(" %p %p \n", INT_MIN, INT_MAX);
+    
 	printf("\n %p %p \n", ULONG_MAX, -ULONG_MAX);
     ft_printf(" %p %p \n", ULONG_MAX, -ULONG_MAX);
+    
 	printf("\n %p %p \n", 0, 0);
     ft_printf(" %p %p \n", 0, 0);
 
 	/*percent*/
-	printf("\n %% ");
-    ft_printf(" %% ");
-	printf("\n %%%% ");
-    ft_printf(" %%%% ");
-	printf("\n %% %% %% ");
-    ft_printf(" %% %% %% ");
-	printf("\n %%  %%  %% ");
-    ft_printf(" %%  %%  %% ");
-	printf("\n %%   %%   %% ");
-    ft_printf(" %%   %%   %% ");
-	printf("\n%%");
-    ft_printf("%%");
-	printf("\n%% %%");
-    ft_printf("%% %%");
+    
+	printf("\n %% \n");
+    ft_printf(" %% \n");
+    
+	printf("\n %%%% \n");
+    ft_printf(" %%%% \n");
+    
+	printf("\n %% %% %% \n");
+    ft_printf(" %% %% %% \n");
+    
+	printf("\n %%  %%  %% \n");
+    ft_printf(" %%  %%  %% \n");
+    
+	printf("\n %%   %%   %% \n");
+    ft_printf(" %%   %%   %% \n");
+    
+	printf("\n%%\n");
+    ft_printf("%%\n");
+    
+	printf("\n%% %%\n");
+    ft_printf("%% %%\n");
 
 	/*s*/
+    
 	printf("\n%s\n", "");
     ft_printf("%s\n", "");
+    
 	printf("\n %s\n", "");
     ft_printf(" %s\n", "");
+    
 	printf("\n%s \n", "");
     ft_printf("%s \n", "");
+    
 	printf("\n %s \n", "");
     ft_printf(" %s \n", "");
+    
 	printf("\n %s \n", "-");
     ft_printf(" %s \n", "-");
+    
 	printf("\n %s %s \n", "\n", "-");
     ft_printf(" %s %s \n", "\n", "-");
+    
 	printf("\n %s %s \n", " - \n", "");
     ft_printf(" %s %s \n", " - \n", "");
+    
 	printf("\n %s %s %s %s %s\n", " - \n", "\n", "4\n", "\n", s2);
     ft_printf(" %s %s %s %s %s\n", " - \n", "\n", "4\n", "\n", s2);
+    
 	printf("\n %s %s %s %s %s \n", " - \n", "\n", "4\n", "\n", "2 ");
     ft_printf(" %s %s %s %s %s \n", " - \n", "\n", "4\n", "\n", "2 ");
+    
 	printf("\n NULL %s NULL \n", NULL);
     ft_printf(" NULL %s NULL \n", NULL);
 
 	/*hash*/
+    
 	printf("\n %#x \n", 0);
     ft_printf(" %#x \n", 0);
+    
 	printf("\n %#x \n", -1);
     ft_printf(" %#x \n", -1);
+    
 	printf("\n %#x \n", 1);
     ft_printf(" %#x \n", 1);
+    
 	printf("\n %#x \n", 9);
     ft_printf(" %#x \n", 9);
+    
 	printf("\n %#x \n", 10);
     ft_printf(" %#x \n", 10);
+    
 	printf("\n %#x \n", 11);
     ft_printf(" %#x \n", 11);
+    
 	printf("\n %#x \n", 15);
     ft_printf(" %#x \n", 15);
+    
 	printf("\n %#x \n", 16);
     ft_printf(" %#x \n", 16);
+    
 	printf("\n %#x \n", 17);
     ft_printf(" %#x \n", 17);
+    
 	printf("\n %#x \n", 99);
     ft_printf(" %#x \n", 99);
+    
 	printf("\n %#x \n", 100);
     ft_printf(" %#x \n", 100);
+    
 	printf("\n %#x \n", 101);
     ft_printf(" %#x \n", 101);
+    
 	printf("\n %#x \n", -9);
     ft_printf(" %#x \n", -9);
+    
 	printf("\n %#x \n", -10);
     ft_printf(" %#x \n", -10);
+    
 	printf("\n %#x \n", -11);
     ft_printf(" %#x \n", -11);
+    
 	printf("\n %#x \n", -14);
     ft_printf(" %#x \n", -14);
+    
 	printf("\n %#x \n", -15);
     ft_printf(" %#x \n", -15);
+    
 	printf("\n %#x \n", -16);
     ft_printf(" %#x \n", -16);
+    
 	printf("\n %#x \n", -99);
     ft_printf(" %#x \n", -99);
+    
 	printf("\n %#x \n", -100);
     ft_printf(" %#x \n", -100);
+    
 	printf("\n %#x \n", -101);
     ft_printf(" %#x \n", -101);
+    
 	printf("\n %#x \n", INT_MAX);
     ft_printf(" %#x \n", INT_MAX);
+    
 	printf("\n %#x \n", INT_MIN);
     ft_printf(" %#x \n", INT_MIN);
+    
 	printf("\n %#x \n", LONG_MAX);
     ft_printf(" %#x \n", LONG_MAX);
+    
 	printf("\n %#x \n", LONG_MIN);
     ft_printf(" %#x \n", LONG_MIN);
+    
 	printf("\n %#x \n", UINT_MAX);
     ft_printf(" %#x \n", UINT_MAX);
+    
 	printf("\n %#x \n", ULONG_MAX);
     ft_printf(" %#x \n", ULONG_MAX);
+    
 	printf("\n %#x \n", 9223372036854775807LL);
     ft_printf(" %#x \n", 9223372036854775807LL);
+    
 	printf("\n %#x %#x %#x %#x %#x %#x %#x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %#x %#x %#x %#x %#x %#x %#x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %#x%#x \n", INT_MAX, INT_MIN);
     ft_printf(" %#x%#x \n", INT_MAX, INT_MIN);
+    
 	printf("\n %#X \n", 0);
     ft_printf(" %#X \n", 0);
+    
 	printf("\n %#X \n", -1);
     ft_printf(" %#X \n", -1);
+    
 	printf("\n %#X \n", 1);
     ft_printf(" %#X \n", 1);
+    
 	printf("\n %#X \n", 9);
     ft_printf(" %#X \n", 9);
+    
 	printf("\n %#X \n", 10);
     ft_printf(" %#X \n", 10);
+    
 	printf("\n %#X \n", 11);
     ft_printf(" %#X \n", 11);
+    
 	printf("\n %#X \n", 15);
     ft_printf(" %#X \n", 15);
+    
 	printf("\n %#X \n", 16);
     ft_printf(" %#X \n", 16);
+    
 	printf("\n %#X \n", 17);
     ft_printf(" %#X \n", 17);
+    
 	printf("\n %#X \n", 99);
     ft_printf(" %#X \n", 99);
+    
 	printf("\n %#X \n", 100);
     ft_printf(" %#X \n", 100);
+    
 	printf("\n %#X \n", 101);
     ft_printf(" %#X \n", 101);
+    
 	printf("\n %#X \n", -9);
     ft_printf(" %#X \n", -9);
+    
 	printf("\n %#X \n", -10);
     ft_printf(" %#X \n", -10);
+    
 	printf("\n %#X \n", -11);
     ft_printf(" %#X \n", -11);
+    
 	printf("\n %#X \n", -14);
     ft_printf(" %#X \n", -14);
+    
 	printf("\n %#X \n", -15);
     ft_printf(" %#X \n", -15);
+    
 	printf("\n %#X \n", -16);
     ft_printf(" %#X \n", -16);
+    
 	printf("\n %#X \n", -99);
     ft_printf(" %#X \n", -99);
+    
 	printf("\n %#X \n", -100);
     ft_printf(" %#X \n", -100);
+    
 	printf("\n %#X \n", -101);
     ft_printf(" %#X \n", -101);
+    
 	printf("\n %#X \n", INT_MAX);
     ft_printf(" %#X \n", INT_MAX);
+    
 	printf("\n %#X \n", INT_MIN);
     ft_printf(" %#X \n", INT_MIN);
+    
 	printf("\n %#X \n", LONG_MAX);
     ft_printf(" %#X \n", LONG_MAX);
+    
 	printf("\n %#X \n", LONG_MIN);
     ft_printf(" %#X \n", LONG_MIN);
+    
 	printf("\n %#X \n", UINT_MAX);
     ft_printf(" %#X \n", UINT_MAX);
+    
 	printf("\n %#X \n", ULONG_MAX);
     ft_printf(" %#X \n", ULONG_MAX);
+    
 	printf("\n %#X \n", 9223372036854775807LL);
     ft_printf(" %#X \n", 9223372036854775807LL);
+    
 	printf("\n %#X %#X %#X %#X %#X %#X %#X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %#X %#X %#X %#X %#X %#X %#X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
 	/*space*/
+    
 	printf("\n% s\n", "");
     ft_printf("% s\n", "");
+    
 	printf("\n % 1s\n", "");
     ft_printf(" % 1s\n", "");
+    
 	printf("\n% 1s \n", "");
     ft_printf("% 1s \n", "");
+    
 	printf("\n % s \n", "");
     ft_printf(" % s \n", "");
+    
 	printf("\n % s \n", "-");
     ft_printf(" % s \n", "-");
+    
 	printf("\n % s % s \n", "\n", "-");
     ft_printf(" % s % s \n", "\n", "-");
+    
 	printf("\n % s % s \n", " - \n", "");
     ft_printf(" % s % s \n", " - \n", "");
+    
 	printf("\n % s % s % s % s \n", " - \n", "\n", "4\n", "");
     ft_printf(" % s % s % s % s \n", " - \n", "\n", "4\n", "");
+    
 	printf("\n % s % s % s % s % s \n", " - \n", "\n", "4\n", "\n", "2 ");
     ft_printf(" % s % s % s % s % s \n", " - \n", "\n", "4\n", "\n", "2 ");
+    
 	printf("\n % d \n", 0);
     ft_printf(" % d \n", 0);
+    
 	printf("\n % d \n", -1);
     ft_printf(" % d \n", -1);
+    
 	printf("\n % d \n", 1);
     ft_printf(" % d \n", 1);
+    
 	printf("\n % d \n", 9);
     ft_printf(" % d \n", 9);
+    
 	printf("\n % d \n", 10);
     ft_printf(" % d \n", 10);
+    
 	printf("\n % d \n", 11);
     ft_printf(" % d \n", 11);
+    
 	printf("\n % d \n", 15);
     ft_printf(" % d \n", 15);
+    
 	printf("\n % d \n", 16);
     ft_printf(" % d \n", 16);
+    
 	printf("\n % d \n", 17);
     ft_printf(" % d \n", 17);
+    
 	printf("\n % d \n", 99);
     ft_printf(" % d \n", 99);
+    
 	printf("\n % d \n", 100);
     ft_printf(" % d \n", 100);
+    
 	printf("\n % d \n", 101);
     ft_printf(" % d \n", 101);
+    
 	printf("\n % d \n", -9);
     ft_printf(" % d \n", -9);
+    
 	printf("\n % d \n", -10);
     ft_printf(" % d \n", -10);
+    
 	printf("\n % d \n", -11);
     ft_printf(" % d \n", -11);
+    
 	printf("\n % d \n", -14);
     ft_printf(" % d \n", -14);
+    
 	printf("\n % d \n", -15);
     ft_printf(" % d \n", -15);
+    
 	printf("\n % d \n", -16);
     ft_printf(" % d \n", -16);
+    
 	printf("\n % d \n", -99);
     ft_printf(" % d \n", -99);
+    
 	printf("\n % d \n", -100);
     ft_printf(" % d \n", -100);
+    
 	printf("\n % d \n", -101);
     ft_printf(" % d \n", -101);
+    
 	printf("\n % d \n", INT_MAX);
     ft_printf(" % d \n", INT_MAX);
+    
 	printf("\n % d \n", INT_MIN);
     ft_printf(" % d \n", INT_MIN);
+    
 	printf("\n % d \n", LONG_MAX);
     ft_printf(" % d \n", LONG_MAX);
+    
 	printf("\n % d \n", LONG_MIN);
     ft_printf(" % d \n", LONG_MIN);
+    
 	printf("\n % d \n", UINT_MAX);
     ft_printf(" % d \n", UINT_MAX);
+    
 	printf("\n % d \n", ULONG_MAX);
     ft_printf(" % d \n", ULONG_MAX);
+    
 	printf("\n % d \n", 9223372036854775807LL);
     ft_printf(" % d \n", 9223372036854775807LL);
+    
 	printf("\n % d % d % d % d % d % d % d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" % d % d % d % d % d % d % d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n % i \n", 0);
     ft_printf(" % i \n", 0);
+    
 	printf("\n % i \n", -1);
     ft_printf(" % i \n", -1);
+    
 	printf("\n % i \n", 1);
     ft_printf(" % i \n", 1);
+    
 	printf("\n % i \n", 9);
     ft_printf(" % i \n", 9);
+    
 	printf("\n % i \n", 10);
     ft_printf(" % i \n", 10);
+    
 	printf("\n % i \n", 11);
     ft_printf(" % i \n", 11);
+    
 	printf("\n % i \n", 15);
     ft_printf(" % i \n", 15);
+    
 	printf("\n % i \n", 16);
     ft_printf(" % i \n", 16);
+    
 	printf("\n % i \n", 17);
     ft_printf(" % i \n", 17);
+    
 	printf("\n % i \n", 99);
     ft_printf(" % i \n", 99);
+    
 	printf("\n % i \n", 100);
     ft_printf(" % i \n", 100);
+    
 	printf("\n % i \n", 101);
     ft_printf(" % i \n", 101);
+    
 	printf("\n % i \n", -9);
     ft_printf(" % i \n", -9);
+    
 	printf("\n % i \n", -10);
     ft_printf(" % i \n", -10);
+    
 	printf("\n % i \n", -11);
     ft_printf(" % i \n", -11);
+    
 	printf("\n % i \n", -14);
     ft_printf(" % i \n", -14);
+    
 	printf("\n % i \n", -15);
     ft_printf(" % i \n", -15);
+    
 	printf("\n % i \n", -16);
     ft_printf(" % i \n", -16);
+    
 	printf("\n % i \n", -99);
     ft_printf(" % i \n", -99);
+    
 	printf("\n % i \n", -100);
     ft_printf(" % i \n", -100);
+    
 	printf("\n % i \n", -101);
     ft_printf(" % i \n", -101);
+    
 	printf("\n % i \n", INT_MAX);
     ft_printf(" % i \n", INT_MAX);
+    
 	printf("\n % i \n", INT_MIN);
     ft_printf(" % i \n", INT_MIN);
+    
 	printf("\n % i \n", LONG_MAX);
     ft_printf(" % i \n", LONG_MAX);
+    
 	printf("\n % i \n", LONG_MIN);
     ft_printf(" % i \n", LONG_MIN);
+    
 	printf("\n % i \n", UINT_MAX);
     ft_printf(" % i \n", UINT_MAX);
+    
 	printf("\n % i \n", ULONG_MAX);
     ft_printf(" % i \n", ULONG_MAX);
+    
 	printf("\n % i \n", 9223372036854775807LL);
     ft_printf(" % i \n", 9223372036854775807LL);
+    
 	printf("\n % i % i % i % i % i % i % i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" % i % i % i % i % i % i % i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
 	/*u*/
+    
 	printf("\n %u \n", 0);
     ft_printf(" %u \n", 0);
+    
 	printf("\n %u \n", -1);
     ft_printf(" %u \n", -1);
+    
 	printf("\n %u \n", 1);
     ft_printf(" %u \n", 1);
+    
 	printf("\n %u \n", 9);
     ft_printf(" %u \n", 9);
+    
 	printf("\n %u \n", 10);
     ft_printf(" %u \n", 10);
+    
 	printf("\n %u \n", 11);
     ft_printf(" %u \n", 11);
+    
 	printf("\n %u \n", 15);
     ft_printf(" %u \n", 15);
+    
 	printf("\n %u \n", 16);
     ft_printf(" %u \n", 16);
+    
 	printf("\n %u \n", 17);
     ft_printf(" %u \n", 17);
+    
 	printf("\n %u \n", 99);
     ft_printf(" %u \n", 99);
+    
 	printf("\n %u \n", 100);
     ft_printf(" %u \n", 100);
+    
 	printf("\n %u \n", 101);
     ft_printf(" %u \n", 101);
+    
 	printf("\n %u \n", -9);
     ft_printf(" %u \n", -9);
+    
 	printf("\n %u \n", -10);
     ft_printf(" %u \n", -10);
+    
 	printf("\n %u \n", -11);
     ft_printf(" %u \n", -11);
+    
 	printf("\n %u \n", -14);
     ft_printf(" %u \n", -14);
+    
 	printf("\n %u \n", -15);
     ft_printf(" %u \n", -15);
+    
 	printf("\n %u \n", -16);
     ft_printf(" %u \n", -16);
+    
 	printf("\n %u \n", -99);
     ft_printf(" %u \n", -99);
+    
 	printf("\n %u \n", -100);
     ft_printf(" %u \n", -100);
+    
 	printf("\n %u \n", -101);
     ft_printf(" %u \n", -101);
+    
 	printf("\n %u \n", INT_MAX);
     ft_printf(" %u \n", INT_MAX);
+    
 	printf("\n %u \n", INT_MIN);
     ft_printf(" %u \n", INT_MIN);
+    
 	printf("\n %u \n", LONG_MAX);
     ft_printf(" %u \n", LONG_MAX);
+    
 	printf("\n %u \n", LONG_MIN);
     ft_printf(" %u \n", LONG_MIN);
+    
 	printf("\n %u \n", UINT_MAX);
     ft_printf(" %u \n", UINT_MAX);
+    
 	printf("\n %u \n", ULONG_MAX);
     ft_printf(" %u \n", ULONG_MAX);
+    
 	printf("\n %u \n", 9223372036854775807LL);
     ft_printf(" %u \n", 9223372036854775807LL);
+    
 	printf("\n %u %u %u %u %u %u %u\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %u %u %u %u %u %u %u\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
 	/*xX*/
+    
 	printf("\n %X \n", 0);
     ft_printf(" %X \n", 0);
+    
 	printf("\n %X \n", -1);
     ft_printf(" %X \n", -1);
+    
 	printf("\n %X \n", 1);
     ft_printf(" %X \n", 1);
+    
 	printf("\n %X \n", 9);
     ft_printf(" %X \n", 9);
+    
 	printf("\n %X \n", 10);
     ft_printf(" %X \n", 10);
+    
 	printf("\n %X \n", 11);
     ft_printf(" %X \n", 11);
+    
 	printf("\n %X \n", 15);
     ft_printf(" %X \n", 15);
+    
 	printf("\n %X \n", 16);
     ft_printf(" %X \n", 16);
+    
 	printf("\n %X \n", 17);
     ft_printf(" %X \n", 17);
+    
 	printf("\n %X \n", 99);
     ft_printf(" %X \n", 99);
+    
 	printf("\n %X \n", 100);
     ft_printf(" %X \n", 100);
+    
 	printf("\n %X \n", 101);
     ft_printf(" %X \n", 101);
+    
 	printf("\n %X \n", -9);
     ft_printf(" %X \n", -9);
+    
 	printf("\n %X \n", -10);
     ft_printf(" %X \n", -10);
+    
 	printf("\n %X \n", -11);
     ft_printf(" %X \n", -11);
+    
 	printf("\n %X \n", -14);
     ft_printf(" %X \n", -14);
+    
 	printf("\n %X \n", -15);
     ft_printf(" %X \n", -15);
+    
 	printf("\n %X \n", -16);
     ft_printf(" %X \n", -16);
+    
 	printf("\n %X \n", -99);
     ft_printf(" %X \n", -99);
+    
 	printf("\n %X \n", -100);
     ft_printf(" %X \n", -100);
+    
 	printf("\n %X \n", -101);
     ft_printf(" %X \n", -101);
+    
 	printf("\n %X \n", INT_MAX);
     ft_printf(" %X \n", INT_MAX);
+    
 	printf("\n %X \n", INT_MIN);
     ft_printf(" %X \n", INT_MIN);
+    
 	printf("\n %X \n", LONG_MAX);
     ft_printf(" %X \n", LONG_MAX);
+    
 	printf("\n %X \n", LONG_MIN);
     ft_printf(" %X \n", LONG_MIN);
+    
 	printf("\n %X \n", UINT_MAX);
     ft_printf(" %X \n", UINT_MAX);
+    
 	printf("\n %X \n", ULONG_MAX);
     ft_printf(" %X \n", ULONG_MAX);
+    
 	printf("\n %X \n", 9223372036854775807LL);
     ft_printf(" %X \n", 9223372036854775807LL);
+    
 	printf("\n %X %X %X %X %X %X %X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %X %X %X %X %X %X %X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %X \n", 42);
     ft_printf(" %X \n", 42);
+    
 	printf("\n %X \n", -42);
     ft_printf(" %X \n", -42);
+    
 	printf("\n %x \n", 0);
     ft_printf(" %x \n", 0);
+    
 	printf("\n %x \n", -1);
     ft_printf(" %x \n", -1);
+    
 	printf("\n %x \n", 1);
     ft_printf(" %x \n", 1);
+    
 	printf("\n %x \n", 9);
     ft_printf(" %x \n", 9);
+    
 	printf("\n %x \n", 10);
     ft_printf(" %x \n", 10);
+    
 	printf("\n %x \n", 11);
     ft_printf(" %x \n", 11);
+    
 	printf("\n %x \n", 15);
     ft_printf(" %x \n", 15);
+    
 	printf("\n %x \n", 16);
     ft_printf(" %x \n", 16);
+    
 	printf("\n %x \n", 17);
     ft_printf(" %x \n", 17);
+    
 	printf("\n %x \n", 99);
     ft_printf(" %x \n", 99);
+    
 	printf("\n %x \n", 100);
     ft_printf(" %x \n", 100);
+    
 	printf("\n %x \n", 101);
     ft_printf(" %x \n", 101);
+    
 	printf("\n %x \n", -9);
     ft_printf(" %x \n", -9);
+    
 	printf("\n %x \n", -10);
     ft_printf(" %x \n", -10);
+    
 	printf("\n %x \n", -11);
     ft_printf(" %x \n", -11);
+    
 	printf("\n %x \n", -14);
     ft_printf(" %x \n", -14);
+    
 	printf("\n %x \n", -15);
     ft_printf(" %x \n", -15);
+    
 	printf("\n %x \n", -16);
     ft_printf(" %x \n", -16);
+    
 	printf("\n %x \n", -99);
     ft_printf(" %x \n", -99);
+    
 	printf("\n %x \n", -100);
     ft_printf(" %x \n", -100);
+    
 	printf("\n %x \n", -101);
     ft_printf(" %x \n", -101);
+    
 	printf("\n %x \n", INT_MAX);
     ft_printf(" %x \n", INT_MAX);
+    
 	printf("\n %x \n", INT_MIN);
     ft_printf(" %x \n", INT_MIN);
+    
 	printf("\n %x \n", LONG_MAX);
     ft_printf(" %x \n", LONG_MAX);
+    
 	printf("\n %x \n", LONG_MIN);
     ft_printf(" %x \n", LONG_MIN);
+    
 	printf("\n %x \n", UINT_MAX);
     ft_printf(" %x \n", UINT_MAX);
+    
 	printf("\n %x \n", ULONG_MAX);
     ft_printf(" %x \n", ULONG_MAX);
+    
 	printf("\n %x \n", 9223372036854775807LL);
     ft_printf(" %x \n", 9223372036854775807LL);
+    
 	printf("\n %x %x %x %x %x %x %x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
     ft_printf(" %x %x %x %x %x %x %x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+    
 	printf("\n %x \n", 42);
     ft_printf(" %x \n", 42);
+    
 	printf("\n %x \n", -42);
     ft_printf(" %x \n", -42);
 

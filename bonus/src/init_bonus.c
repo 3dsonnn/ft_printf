@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 07:59:11 by efinda            #+#    #+#             */
-/*   Updated: 2025/03/01 23:56:42 by efinda           ###   ########.fr       */
+/*   Updated: 2025/03/02 17:49:43 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../ft_printf_bonus.h"
 
 int	init_nbr(t_nbr *nbr, t_integer n)
 {
@@ -32,6 +32,8 @@ int	init_nbr(t_nbr *nbr, t_integer n)
 		nbr->str = ft_xtoa(n.ui, HEXLOW, 16);
 	else if (nbr->id == 'X')
 		nbr->str = ft_xtoa(n.ui, HEXUP, 16);
+	else if (nbr->id == 'a')
+		nbr->str = ft_atoa(n.a, HEXLOW, 16);
 	if (!nbr->str)
 		return (1);
 	nbr->len = ft_strlen(nbr->str);
@@ -54,19 +56,8 @@ void	init_format(t_printf *ptf)
 
 void	init(t_printf *ptf, const char *input)
 {
-	*ptf = (t_printf){
-		.format.type = '\0',
-		.input = (char *)input,
-        .size = 0,
-		.format.zero = 0,
-		.format.hash = 0,
-		.format.plus = 0,
-		.format.space = 0,
-		.format.minus = 0,
-		.format.dot = -1,
-		.format.width = -1,
-		.format.str = NULL,
-        .format.start = NULL,
-        .format.end = NULL
-	};
+	*ptf = (t_printf){.format.type = '\0', .input = (char *)input, .size = 0,
+		.format.zero = 0, .format.hash = 0, .format.plus = 0, .format.space = 0,
+		.format.minus = 0, .format.dot = -1, .format.width = -1,
+		.format.str = NULL, .format.start = NULL, .format.end = NULL};
 }

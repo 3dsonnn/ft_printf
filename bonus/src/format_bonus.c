@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   format.c                                           :+:      :+:    :+:   */
+/*   format_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 05:52:00 by efinda            #+#    #+#             */
-/*   Updated: 2025/03/01 12:34:03 by efinda           ###   ########.fr       */
+/*   Updated: 2025/03/02 17:49:02 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../ft_printf_bonus.h"
 
-static	void	skip_flag(t_printf *ptf, char id, int *flag)
+static void	skip_flag(t_printf *ptf, char id, int *flag)
 {
 	while (*ptf->input && *ptf->input == id)
 	{
@@ -21,7 +21,7 @@ static	void	skip_flag(t_printf *ptf, char id, int *flag)
 	}
 }
 
-static	void	get_flag_value(t_printf *ptf, size_t *flag)
+static void	get_flag_value(t_printf *ptf, long *flag)
 {
 	*flag = 0;
 	if (!ft_isdigit(*ptf->input))

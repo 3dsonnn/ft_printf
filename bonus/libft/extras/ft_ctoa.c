@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   address.c                                          :+:      :+:    :+:   */
+/*   ft_ctoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 19:13:57 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/27 20:15:54 by efinda           ###   ########.fr       */
+/*   Created: 2025/01/12 09:59:30 by efinda            #+#    #+#             */
+/*   Updated: 2025/03/02 16:50:33 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libft.h"
 
-void	print_addr(t_printf *ptf, void *ptr)
+char	*ft_ctoa(char c)
 {
+	char	*res;
+
+	res = (char *)malloc(sizeof(char) * 2);
+	if (!res)
+		return (NULL);
+	*res = c;
+	*(res + 1) = '\0';
+	return (res);
 }

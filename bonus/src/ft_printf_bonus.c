@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:50:52 by efinda            #+#    #+#             */
-/*   Updated: 2025/03/02 01:28:26 by efinda           ###   ########.fr       */
+/*   Updated: 2025/03/02 19:16:58 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
-
-static inline void	handle_conflicts(t_printf *ptf)
-{
-	if (ptf->format.plus)
-		ptf->format.space = 0;
-	if (ptf->format.dot)
-		ptf->format.zero = 0;
-	if (ptf->format.minus)
-		ptf->format.zero = 0;
-}
+#include "../ft_printf_bonus.h"
 
 static void	select_printer(t_printf *ptf)
 {
+	// printf("*****%c*****\n", ptf->format.type);
 	if (!ptf->format.type)
 		print_no_type(ptf);
 	if (ptf->format.type == 'c')
 		print_char(ptf, (char)va_arg(ptf->args, int));
 	if (ptf->format.type == 's')
-		print_str(ptf, (char *)va_arg(ptf->args, char *), -1,
-			ft_strlen((char *)va_arg(ptf->args, char *)));
+		print_str(ptf, (char *)va_arg(ptf->args, char *), -1, 0);
 	if (ptf->format.type == 'p')
 		print_addr(ptf, (void *)va_arg(ptf->args, void *));
 	if (ptf->format.type == 'd' || ptf->format.type == 'i')
@@ -53,11 +43,8 @@ static void	read_input(t_printf *ptf)
 		if (*ptf->input == '%')
 		{
 			ptf->input++;
-			// if (!*ptf->input)
-			// {
-			// 	ptf->size = -1;
-			// 	break ;
-			// }
+			if (!*ptf->input)
+				break ;
 			init_format(ptf);
 			parse_format(ptf);
 			select_printer(ptf);

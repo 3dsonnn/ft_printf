@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ctoa.c                                          :+:      :+:    :+:   */
+/*   no_type_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 09:59:30 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/21 01:36:45 by efinda           ###   ########.fr       */
+/*   Created: 2025/02/26 19:48:25 by efinda            #+#    #+#             */
+/*   Updated: 2025/03/02 18:31:47 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../ft_printf_bonus.h"
 
-char	*ft_ctoa(char c)
+void	print_no_type(t_printf *ptf)
 {
-	char *res;
-
-	res = (char *)malloc(sizeof(char) * 2);
-	if (!res)
-		return (NULL);
-	*res = c;
-	*(res + 1) = '\0';
-	return (res);
+	while (ptf->format.start)
+	{
+		ft_putchar(*ptf->format.start, 1, &ptf->size);
+		++ptf->format.start;
+		if (ptf->format.start == ptf->format.end)
+		{
+			ft_putchar(*ptf->format.start, 1, &ptf->size);
+			break ;
+		}
+	}
 }

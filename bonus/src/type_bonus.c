@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type.c                                             :+:      :+:    :+:   */
+/*   type_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:14:16 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/27 20:15:54 by efinda           ###   ########.fr       */
+/*   Updated: 2025/03/02 17:50:08 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../ft_printf_bonus.h"
 
 static int	type_check_dot(t_printf *ptf, char *dot, int i, int flag)
 {
@@ -37,7 +37,7 @@ static int	type_check_zero(t_printf *ptf, char *str, char *zero, char *dot)
 	while (zero && *zero == '0')
 	{
 		aux = zero + ft_strspn(zero, DIGITS);
-		if (!dot && aux == str + ft_strlen(str) - 1 || (dot && *aux == '.'))
+		if ((!dot && aux == str + ft_strlen(str) - 1) || (dot && *aux == '.'))
 			return (0);
 		if (ft_strchr(NBR, *(zero + 1)))
 		{
@@ -48,6 +48,7 @@ static int	type_check_zero(t_printf *ptf, char *str, char *zero, char *dot)
 		zero++;
 		zero = ft_strchr(zero, '0');
 	}
+	return (0);
 }
 
 static int	type_check_width(t_printf *ptf, char *width)
