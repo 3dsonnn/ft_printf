@@ -6,7 +6,7 @@
 #    By: efinda <efinda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 22:50:44 by efinda            #+#    #+#              #
-#    Updated: 2025/03/01 09:17:45 by efinda           ###   ########.fr        #
+#    Updated: 2025/03/02 02:14:25 by efinda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,9 @@ SRC =	src/ft_printf.c				\
 		src/integer.c				\
 		src/string.c				\
 		src/address.c				\
-		src/hexadecimal.c			\
 		src/print.c					\
+		src/flags.c					\
+		src/utils.c					\
 
 LIBFT =	libft/libft.a
 LIB =	ar rcs

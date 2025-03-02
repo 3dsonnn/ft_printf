@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: efinda <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 01:02:24 by efinda            #+#    #+#             */
-/*   Updated: 2025/01/12 10:00:27 by efinda           ###   ########.fr       */
+/*   Updated: 2025/03/01 23:37:53 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-
-typedef struct s_point
-{
-	int				x;
-	int				y;
-}					t_point;
-
 //	ctype
 int					ft_isspace(int c);
 int					ft_isblank(int c);
@@ -44,19 +32,6 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_isupper(int c);
 int					ft_islower(int c);
-
-//	linked_list
-int					ft_lstsize(t_list *lst);
-void				del(void *content);
-void				ft_lstadd_back(t_list **lst, t_list *new);
-void				ft_lstiter(t_list *lst, void (*f)(void *));
-void				ft_lstadd_front(t_list **lst, t_list *newnode);
-void				ft_lstclear(t_list **lst, void (*del)(void *));
-void				ft_lstdelone(t_list *lst, void (*del)(void *));
-t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstnew(void *content);
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-						void (*del)(void *));
 
 //	non_standard
 char				*ft_itoa(int n);
@@ -94,8 +69,7 @@ size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 
 //	extras
 long long int		ft_atoll(char *str);
-int					ft_getpid(void);
-int					ft_nbrlen(int n);
+int					ft_intlen(int n);
 int					ft_strnbr(char *str);
 int					ft_strspace(char *str);
 int					ft_mtxlen(char **matrix);
@@ -112,7 +86,6 @@ void				ft_mtxfree(char ***matrix);
 void				ft_strfree(char **str);
 void				ft_swaptr(void **p1, void **p2);
 void				ft_replace_char(char *str, char src, char dst);
-void				flood_fill(char **tab, t_point size, t_point begin);
 char				*ft_ctoa(char c);
 char				*ft_strcpy(char *dest, char *src);
 char				**ft_mtxdup(char **matrix);
@@ -121,7 +94,6 @@ char				*ft_strndup(char *str, int n);
 char				*ft_strjoin_space_free(char *str, char *buffer);
 char				*ft_strjoin_free(char *str, char *buffer);
 char				*ft_strjoin_free_both(char *str, char *buffer);
-char				**ft_lstmtx(t_list *lst);
 char				*ft_join(char *new_str, char *str, char *buffer);
 char				**ft_realloc(char **matrix, char **tmp, int old_size,
 						int new_size);

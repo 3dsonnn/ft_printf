@@ -6,23 +6,32 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 07:59:11 by efinda            #+#    #+#             */
-/*   Updated: 2025/03/01 13:28:54 by efinda           ###   ########.fr       */
+/*   Updated: 2025/03/01 23:56:42 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	init_nbr(t_nbr *nbr, int n)
+int	init_nbr(t_nbr *nbr, t_integer n)
 {
-	if (n < 0)
+	if (nbr->id == 'i')
 	{
-		n *= -1;
-		nbr->neg = 1;
+		if (n.i < 0)
+		{
+			n.i *= -1;
+			nbr->neg = 1;
+		}
+		if (n.i == INT_MIN)
+			nbr->str = ft_strdup("2147483648");
+		else
+			nbr->str = ft_itoa(n.i);
 	}
-	else
-		nbr->neg = 0;
-	nbr->str = ft_itoa(n);
-	nbr->tmp = NULL;
+	else if (nbr->id == 'u')
+		nbr->str = ft_xtoa(n.ui, DIGITS, 10);
+	else if (nbr->id == 'x')
+		nbr->str = ft_xtoa(n.ui, HEXLOW, 16);
+	else if (nbr->id == 'X')
+		nbr->str = ft_xtoa(n.ui, HEXUP, 16);
 	if (!nbr->str)
 		return (1);
 	nbr->len = ft_strlen(nbr->str);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: efinda <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: efinda <efinda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 19:18:41 by efinda            #+#    #+#              #
-#    Updated: 2025/01/12 10:00:53 by efinda           ###   ########.fr        #
+#    Updated: 2025/03/01 23:36:20 by efinda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,16 +50,6 @@ SRC = 	ctype/ft_isalnum.c				\
 	non_standard/ft_strjoin.c			\
 	non_standard/ft_strmapi.c			\
 	non_standard/ft_strtrim.c			\
-	linked_list/del.c				\
-	linked_list/ft_lstadd_back.c 			\
-	linked_list/ft_lstadd_front.c 			\
-	linked_list/ft_lstclear.c 			\
-	linked_list/ft_lstdelone.c 			\
-	linked_list/ft_lstiter.c 			\
-	linked_list/ft_lstlast.c 			\
-	linked_list/ft_lstmap.c				\
-	linked_list/ft_lstnew.c 			\
-	linked_list/ft_lstsize.c 			\
 	extras/ft_mtxfree.c				\
 	extras/ft_mtxlen.c				\
 	extras/ft_strspace.c				\
@@ -75,20 +65,17 @@ SRC = 	ctype/ft_isalnum.c				\
 	extras/ft_strjoin_space_free.c			\
 	extras/ft_strjoin_free.c			\
 	extras/ft_strjoin_free_both.c			\
-	extras/ft_lstmtx.c				\
 	extras/ft_join.c				\
-	extras/ft_nbrlen.c				\
+	extras/ft_intlen.c				\
 	extras/ft_realloc.c				\
 	extras/ft_strnbr.c				\
 	extras/ft_strspn.c				\
 	extras/ft_strcspn.c				\
 	extras/ft_atoll.c				\
-	extras/ft_getpid.c				\
 	extras/ft_strchr_count.c			\
 	extras/ft_swaptr.c				\
 	extras/ft_word_count.c				\
 	extras/ft_longestr_mtx.c			\
-	extras/ft_flood_fill.c				\
 	extras/ft_ctoa.c				\
 	extras/ft_replace_char.c			\
 	extras/ft_strpbrk.c				\

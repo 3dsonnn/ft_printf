@@ -1,17 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hexadecimal.c                                      :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 19:12:45 by efinda            #+#    #+#             */
-/*   Updated: 2025/02/27 20:15:54 by efinda           ###   ########.fr       */
+/*   Created: 2024/11/12 12:01:32 by efinda            #+#    #+#             */
+/*   Updated: 2025/03/01 23:31:01 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../libft.h"
 
-void	print_hex(t_printf *ptf, unsigned int nbr, char *base)
+int	ft_intlen(int n)
 {
+	int	res;
+
+	res = 0;
+	if (n < 0)
+	{
+		n *= -1;
+		res++;
+	}
+	while (n)
+	{
+		n /= 10;
+		res++;
+	}
+	return (res);
 }

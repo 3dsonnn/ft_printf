@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 20:37:12 by efinda            #+#    #+#             */
-/*   Updated: 2025/03/01 23:34:36 by efinda           ###   ########.fr       */
+/*   Created: 2025/03/01 23:27:58 by efinda            #+#    #+#             */
+/*   Updated: 2025/03/01 23:54:15 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../ft_printf.h"
 
-char	*ft_itoa(int n)
+static int	ft_uintlen(unsigned int n, int base)
+{
+	int	res;
+
+	res = 0;
+	while (n)
+	{
+		n /= base;
+		res++;
+	}
+	return (res);
+}
+
+char	*ft_xtoa(unsigned int n, char *base, int div)
 {
 	char	*res;
 	int		size;
 
-	if (n == INT_MIN)
-		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		return (ft_strdup("0"));
-	size = ft_intlen(n);
+	size = ft_uintlen(n, div);
 	res = (char *)malloc(sizeof(char) * (size + 1));
 	if (!res)
 		return (NULL);
 	res[size] = '\0';
-	if (n < 0)
-	{
-		res[0] = '-';
-		n *= -1;
-	}
 	while (n)
 	{
-		res[--size] = n % 10 + '0';
-		n /= 10;
+		res[--size] = base[n % div];
+		n /= div;
 	}
 	return (res);
 }
