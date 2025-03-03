@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 22:50:52 by efinda            #+#    #+#             */
-/*   Updated: 2025/03/02 19:16:58 by efinda           ###   ########.fr       */
+/*   Updated: 2025/03/03 12:17:29 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	select_printer(t_printf *ptf)
 {
-	// printf("*****%c*****\n", ptf->format.type);
 	if (!ptf->format.type)
 		print_no_type(ptf);
 	if (ptf->format.type == 'c')

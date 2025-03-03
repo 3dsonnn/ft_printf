@@ -6,7 +6,7 @@
 /*   By: efinda <efinda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 18:45:16 by efinda            #+#    #+#             */
-/*   Updated: 2025/03/02 19:16:06 by efinda           ###   ########.fr       */
+/*   Updated: 2025/03/03 12:22:02 by efinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	print_int(t_printf *ptf, int n)
 		apply_flags(ptf, &nbr, 0, 0);
 	else if (n < 0)
 		ft_putchar('-', 1, &ptf->size);
-	printf("-->%s\n", nbr.str);
 	ft_putstr(nbr.str, -1, &ptf->size);
 	ft_strfree(&nbr.str);
 }

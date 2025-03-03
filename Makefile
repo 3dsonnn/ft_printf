@@ -6,11 +6,12 @@
 #    By: efinda <efinda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 22:50:44 by efinda            #+#    #+#              #
-#    Updated: 2025/03/02 18:03:40 by efinda           ###   ########.fr        #
+#    Updated: 2025/03/03 14:19:07 by efinda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	libftprintf.a
+BONUS_NAME = libftprintf_bonus.a
 
 CC = cc
 LIB = ar rcs
@@ -36,29 +37,31 @@ BONUS_SRC =	bonus/src/ft_printf_bonus.c			\
 LIBFT_DIR =	bonus/libft
 LIBFT =	$(LIBFT_DIR)/libft.a
 
+$(LIBFT):
+	$(MAKE) -s -C $(LIBFT_DIR)
+
 OBJ = $(SRC:%.c=%.o)
 BONUS_OBJ = $(BONUS_SRC:%.c=%.o)
-
-all: $(NAME)
-
-bonus: $(BONUS_OBJ) $(NAME)
-	@$(LIB) $(NAME) $(BONUS_OBJ)
-
-$(LIBFT):
-	@$(MAKE) -s -C $(LIBFT_DIR)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
+all: $(NAME)
+
 $(NAME): $(OBJ) $(LIBFT)
 	$(LIB) $(NAME) $(OBJ)
 
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(BONUS_OBJ) $(LIBFT)
+	$(LIB) $(BONUS_NAME) $(BONUS_OBJ)
+
 clean:
-	@$(RM) $(OBJ) $(BONUS_OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 	$(MAKE) -s -C $(LIBFT_DIR) clean
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS_NAME)
 	$(MAKE) -s -C $(LIBFT_DIR) fclean
 
 re: fclean all bonus
